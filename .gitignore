@@ -10,7 +10,11 @@
 references/
 
 # Historical archives
-archived/
+archived/*
+!archived/references/
+archived/references/*
+!archived/references/create-aether-agent/
+!archived/references/create-aether-agent/**
 
 # Business Evaluations (Sensitive)
 MARKET_EVALUATION.md

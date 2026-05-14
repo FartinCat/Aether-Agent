@@ -1,0 +1,31 @@
+{
+  "name": "create-aether-agent",
+  "version": "4.10.0",
+  "description": "Create a portable Aether Agent project in any folder.",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bin": {
+    "create-aether-agent": "./archived/references/create-aether-agent/bin/create-aether-agent.js"
+  },
+  "files": [
+    "AETHER.md",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "LICENSE.md",
+    "README.md",
+    ".agent",
+    ".claude",
+    ".codex",
+    ".mcp.json",
+    "archived",
+    "assets",
+    "docs",
+    "scripts",
+    "archived/references/create-aether-agent"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "create": "node ./archived/references/create-aether-agent/bin/create-aether-agent.js"
+  }
+}

@@ -134,7 +134,11 @@ graph TD
 
 ## 📥 Deployment Guide (Installation)
 
-Aether Agent is designed to be **injected** into any directory. To install, copy the agent runtime, IDE stubs, and root metadata into the folder you want to use as the new project root.
+Aether Agent is designed to be **injected** into any directory. To install manually, copy the agent runtime, IDE stubs, and root metadata into the folder you want to use as the new project root. If you want a one-command setup, use the npm scaffolder.
+
+```bash
+npm create aether-agent ./your-project
+```
 
 
 ### 🐧 Linux / 🍎 macOS / 💻 WSL
@@ -182,6 +186,8 @@ Once installed, run these two commands in order via your AI IDE (Cursor/Windsurf
 2. `/03-scaffold` — Creates the portable project skeleton, including `assets/`, `docs/`, and `archived/`.
 
 After `/01-scan`, the session context rebases to the folder you copied into. If you move the same `.agent/` bundle into a different directory, run `/01-scan` again and it will rebind to the new project root.
+
+The npm scaffolder installs the same bundle into the target folder and then you run `/01-scan` there to bind the workflows and session context to that path.
 
 
 ---
