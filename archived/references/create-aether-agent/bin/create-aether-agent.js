@@ -143,8 +143,7 @@ const fileCopies = [
   [".claude/agents/test-engineer.md", ".claude/agents/test-engineer.md"],
   [".mcp.json", ".mcp.json"],
   ["scripts/entrypoint.sh", "scripts/entrypoint.sh"],
-  ["scripts/install-mcps.sh", "scripts/install-mcps.sh"],
-  ["LICENSE.md", "LICENSE.md"]
+  ["scripts/install-mcps.sh", "scripts/install-mcps.sh"]
 ];
 
 const textTemplates = {
