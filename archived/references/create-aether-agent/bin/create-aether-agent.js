@@ -32,7 +32,6 @@ const directoryPaths = [
 
 const fileCopies = [
   [".agent/aether-agent-install-state.json", ".agent/aether-agent-install-state.json"],
-  [".agent/antigravity-agent-install-state.json", ".agent/antigravity-agent-install-state.json"],
   [".agent/scripts/bootstrap.js", ".agent/scripts/bootstrap.js"],
   [".agent/scripts/detect_root.py", ".agent/scripts/detect_root.py"],
   [".agent/scripts/readme_architect.py", ".agent/scripts/readme_architect.py"],
@@ -197,6 +196,15 @@ function main() {
     const destinationPath = path.join(defaultTarget, destinationRelativePath);
     ensureDirectory(path.dirname(destinationPath));
     fs.writeFileSync(destinationPath, content, "utf8");
+  }
+
+  // Reset install state version to 0.1.0 for new project
+  const installStateFile = path.join(defaultTarget, ".agent/aether-agent-install-state.json");
+  if (fs.existsSync(installStateFile)) {
+    const installState = JSON.parse(fs.readFileSync(installStateFile, "utf8"));
+    installState.version = "0.1.0";
+    installState.release_date = new Date().toISOString().split("T")[0];
+    fs.writeFileSync(installStateFile, JSON.stringify(installState, null, 2), "utf8");
   }
 
   console.log(`Aether Agent scaffolded at: ${defaultTarget}`);
