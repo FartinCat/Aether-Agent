@@ -1,4 +1,4 @@
-# Deletion Registry — Antigravity Agent
+# Deletion Registry — Aether Agent
 This file logs every item deleted, moved, or archived.
 Never delete this file.
 
