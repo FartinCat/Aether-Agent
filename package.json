@@ -1,31 +1,43 @@
 {
-  "name": "create-aether-agent",
-  "version": "4.10.0",
-  "description": "Create a portable Aether Agent project in any folder.",
-  "license": "SEE LICENSE IN LICENSE.md",
+  "name": "aether-agent",
+  "version": "4.12.0",
+  "description": "Aether Agentic OS — A highly-disciplined visual, operational, and development framework for AI IDEs.",
+  "main": "archived/references/create-aether-agent/bin/create-aether-agent.js",
   "bin": {
-    "create-aether-agent": "./archived/references/create-aether-agent/bin/create-aether-agent.js"
+    "create-aether-agent": "archived/references/create-aether-agent/bin/create-aether-agent.js",
+    "aether-agent": "archived/references/create-aether-agent/bin/create-aether-agent.js"
+  },
+  "scripts": {
+    "install-agent": "node archived/references/create-aether-agent/bin/create-aether-agent.js"
+  },
+  "keywords": [
+    "ai",
+    "agentic-os",
+    "claude",
+    "cursor",
+    "windsurf",
+    "development",
+    "visual-aesthetics",
+    "quality-gate",
+    "tdd",
+    "project-scaffold"
+  ],
+  "author": "FartinCat <fartincat@proton.me>",
+  "license": "AAEL",
+  "engines": {
+    "node": ">=16.0.0"
   },
   "files": [
+    ".agent",
+    ".claude",
+    ".codex",
+    "scripts",
+    ".mcp.json",
+    "archived/references/create-aether-agent/bin/create-aether-agent.js",
     "AETHER.md",
     "AGENTS.md",
     "CLAUDE.md",
     "LICENSE.md",
-    "README.md",
-    ".agent",
-    ".claude",
-    ".codex",
-    ".mcp.json",
-    "archived",
-    "assets",
-    "docs",
-    "scripts",
-    "archived/references/create-aether-agent"
-  ],
-  "engines": {
-    "node": ">=18"
-  },
-  "scripts": {
-    "create": "node ./archived/references/create-aether-agent/bin/create-aether-agent.js"
-  }
+    "README.md"
+  ]
 }
