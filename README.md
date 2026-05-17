@@ -4,11 +4,11 @@
 ![Aether Agent Banner](assets/banner.png)
 
 
-# 🌌 Aether Agent Ecosystem (v4.10.0)
+# 🌌 Aether Agent Ecosystem (v4.12.0)
 **The Ultimate Agentic Operating System for Professional Software Engineering**
 
 
-[![Version](https://img.shields.io/badge/version-4.10.0-blueviolet?style=for-the-badge)](AETHER.md)
+[![Version](https://img.shields.io/badge/version-4.12.0-blueviolet?style=for-the-badge)](AETHER.md)
 [![License](https://img.shields.io/badge/license-AAEL-blue?style=for-the-badge)](LICENSE.md)
 [![Status](https://img.shields.io/badge/status-Production_Ready-green?style=for-the-badge)](#)
 
@@ -294,6 +294,17 @@ All agents are now augmented with the **Advanced Operations Matrix (v4.0.0)**, e
 - **Data Engineering**: Large-scale data processing using pandas, numpy, and JSON-querying.
 - **Security Audits**: Automated vulnerability scanning and dependency verification.
 - **Performance Benchmarking**: Integrated profiling and optimization cycles.
+
+
+## ⚖️ Commercial & Legal
+
+Aether Agent is released under the **Aether Agent Ecosystem License (AAEL) v1.0**.
+
+- **Commercial Use**: Requires a paid license fee. Please contact **fartincat@proton.me** for enterprise, team, or revenue-generating usage.
+- **Academic & Personal Use**: Free for institutional and personal evaluation (requires institutional verification).
+- **Contributor Access**: Free personal/commercial use granted to active contributors pending explicit validation by the author.
+
+For detailed market evaluation and complexity breakdown, refer to `docs/market-evaluations/MARKET_EVALUATION_00.md`.
 
 
 ---

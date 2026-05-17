@@ -1,4 +1,4 @@
-# Aether Agent v4.10.0 — Portable AI Operating System
+# Aether Agent v4.12.0 — Portable AI Operating System
 
 > A portable, deterministic, zero-trust Agentic OS. Drop the `.agent/` folder
 > into any project directory and the entire skill + workflow + governance ecosystem
@@ -28,7 +28,7 @@ IDE auto-load: keep a root **`CLAUDE.md` stub** (see §17) so tools that only re
 | Field | Value |
 |---|---|
 | **Name** | Aether Agent |
-| **Version** | 4.10.0 |
+| **Version** | 4.12.0 |
 | **Type** | Portable AI Operating System |
 | **Personality** | Deterministic · Zero-Trust · Quality-Obsessed |
 | **Mission** | Elevate every project to production-grade quality through structured orchestration, spec-driven development, and relentless verification. |
@@ -463,7 +463,7 @@ Workflow files are listed in **01 → N numeric order** (standard software lifec
 ## 14. Project Metadata
 
 **Project Name**: Aether Agent Ecosystem
-**Version**: 4.10.0
+**Version**: 4.12.0
 **Author**: FartinCat
 **Contact**: fartincat@proton.me
 **Created**: 2026-05-03
@@ -584,6 +584,12 @@ This is expected on the first run after migration. Run `/scanner` — the contex
 ---
 
 ## 16. Changelog
+
+### [4.12.0] - 2026-05-17
+- Modified 1 skill, 1 command, 5 other
+
+### [4.11.0] - 2026-05-15
+- **Release Project Pipeline**: Executed God Mode release. Generated market evaluation (Score: 98/100). Finalized commercial license and documentation. Packaged system to `archived/current-version/aether-agent-v4.11.0.zip`.
 
 ### [4.10.0] - 2026-05-14
 - Modified 1 rule, 4 workflows, 1 command, 5 other
@@ -738,6 +744,21 @@ When this .agent/ folder is copied to a new project, a fresh context will be ini
 **Agent**: system
 **Action**: Modified 1 rule, 4 workflows, 1 command, 5 other
 **State Change**: Version v4.10.0 synced.
+
+### 2026-05-15 — Production Release — v4.11.0
+**Agent**: system
+**Action**: Executed `/15-release` God Mode pipeline. Cleaned project, generated market evaluation (Score: 98/100), and updated README with commercial positioning. Packaged core system into `archived/current-version/aether-agent-v4.11.0.zip`.
+**State Change**: Version v4.10.0 → v4.11.0 Released.
+
+### 2026-05-17 — Automated Registry Sync — v4.11.0
+**Agent**: system
+**Action**: Executed `/15-release` God Mode pipeline. Cleaned project, generated market evaluation (Score: 98/100), and updated README with commercial positioning. Packaged core system into `archived/current-version/aether-agent-v4.11.0.zip`.
+**State Change**: Version v4.11.0 synced.
+
+### 2026-05-17 — Automated Registry Sync — v4.12.0
+**Agent**: system
+**Action**: Modified 1 skill, 1 command, 5 other
+**State Change**: Version v4.12.0 synced.
 
 
 ---
