@@ -1,0 +1,10 @@
+{
+  "enabledMcpjsonServers": [
+    "21st-dev-magic",
+    "StitchMCP",
+    "figma-remote",
+    "mongodb",
+    "playwright",
+    "supabase"
+  ]
+}
