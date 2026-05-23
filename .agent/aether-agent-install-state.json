@@ -1,5 +1,5 @@
 {
-  "version": "4.12.0",
+  "version": "4.12.4",
   "release_date": "2026-05-09",
   "installed_rules": [
     "00-workflow-orchestration.md",
@@ -143,7 +143,7 @@
     "commands": 15,
     "specialist_personas": 3
   },
-  "last_updated": "2026-05-17T16:32:22Z",
+  "last_updated": "2026-05-23T11:59:12Z",
   "changelog": {
     "4.7.0": "Quality Hardening: Upgraded sync engine, expanded 6 thin workflows, fixed CLAUDE.md structure, converted boot to lazy-loading.",
     "4.1.1": "Executed God Mode pipeline. Packaged v4.1.1 release archive.",
@@ -155,6 +155,10 @@
     "4.9.0": "Modified 17 workflows, 6 other",
     "4.10.0": "Modified 1 rule, 4 workflows, 1 command, 5 other",
     "4.11.0": "Executed `/15-release` God Mode pipeline. Cleaned project, generated market evaluation (Score: 98/100), and updated README with commercial positioning. Packaged core system into `archived/current-version/aether-agent-v4.11.0.zip`.",
-    "4.12.0": "Modified 1 skill, 1 command, 5 other"
+    "4.12.0": "Modified 1 skill, 1 command, 5 other",
+    "4.12.1": "Modified 18 workflows, 2 other",
+    "4.12.2": "Modified 19 workflows, 1 other",
+    "4.12.3": "Modified 19 workflows, 1 other",
+    "4.12.4": "Modified 19 workflows, 1 other"
   }
 }

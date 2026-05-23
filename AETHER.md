@@ -1,4 +1,4 @@
-# Aether Agent v4.12.0 — Portable AI Operating System
+# Aether Agent v4.12.4 — Portable AI Operating System
 
 > A portable, deterministic, zero-trust Agentic OS. Drop the `.agent/` folder
 > into any project directory and the entire skill + workflow + governance ecosystem
@@ -28,7 +28,7 @@ IDE auto-load: keep a root **`CLAUDE.md` stub** (see §17) so tools that only re
 | Field | Value |
 |---|---|
 | **Name** | Aether Agent |
-| **Version** | 4.12.0 |
+| **Version** | 4.12.4 |
 | **Type** | Portable AI Operating System |
 | **Personality** | Deterministic · Zero-Trust · Quality-Obsessed |
 | **Mission** | Elevate every project to production-grade quality through structured orchestration, spec-driven development, and relentless verification. |
@@ -377,20 +377,20 @@ Workflow files are listed in **01 → N numeric order** (standard software lifec
 - **`02-onboard.md`**: Analyze legacy code and suggest initial strategy.
 - **`03-scaffold.md`**: Initialize project structure and taxonomy.
 - **`04-spec.md`**: Functional and technical spec extraction.
-- **`05-research.md`**: **Objective**: Execute simultaneous research across multiple technical paths, then synthesize findings into a unified comparison matrix. Use when evaluating competing technologies, frameworks, libraries, or architectural patterns.
+- **`05-research.md`**: Execute parallel technical research paths.
 - **`06-plan-synthesis.md`**: Merge competing AI strategies into one plan.
 - **`07-knowledge-capture.md`**: Distill project insights into persistent KIs.
-- **`08-build.md`**: **Objective**: End-to-end pipeline for building a production-ready software application from specification through implementation to deployment readiness. Enforces architectural discipline, test coverage, and clean code practices.
-- **`09-feature.md`**: **Objective**: Incrementally build a single feature from specification through implementation to verification. This is the inner loop of development — one feature at a time, fully tested before moving to the next.
+- **`08-build.md`**: End-to-end production application build pipeline.
+- **`09-feature.md`**: Incremental feature development loop.
 - **`10-tdd.md`**: Disciplined Red-Green-Refactor orchestration.
 - **`11-debug.md`**: Intensive diagnostic and repair protocol.
 - **`12-performance.md`**: Profiling and bottleneck elimination.
 - **`13-quality-gate.md`**: Compliance check against design/requirements.
 - **`14-validate.md`**: Audit previous steps for hallucinations/errors.
 - **`15-release.md`**: God Mode: License, README, Packaging.
-- **`16-sync-registry.md`**: Synchronize all registry files with the actual .agent/ filesystem state.
+- **`16-sync-registry.md`**: Synchronize all registry files with actual .agent/ state.
 - **`17-auto-commit.md`**: Atomic, semantic commit generation loop.
-- **`18-readme-architect.md`**: Dynamically updates the README.md to accurately reflect all active agents, workflows, and skills.
+- **`18-readme-architect.md`**: Dynamically updates README.md with active state.
 - **`19-mcp-audit.md`**: Audit & map integrated MCP tool capabilities.
 
 ### After this workflow … (typical handoffs)
@@ -463,7 +463,7 @@ Workflow files are listed in **01 → N numeric order** (standard software lifec
 ## 14. Project Metadata
 
 **Project Name**: Aether Agent Ecosystem
-**Version**: 4.12.0
+**Version**: 4.12.4
 **Author**: FartinCat
 **Contact**: fartincat@proton.me
 **Created**: 2026-05-03
@@ -584,6 +584,12 @@ This is expected on the first run after migration. Run `/scanner` — the contex
 ---
 
 ## 16. Changelog
+
+### [4.12.2] - 2026-05-23
+- Modified 19 workflows, 1 other
+
+### [4.12.1] - 2026-05-23
+- Modified 18 workflows, 2 other
 
 ### [4.12.0] - 2026-05-17
 - Modified 1 skill, 1 command, 5 other
@@ -759,6 +765,26 @@ When this .agent/ folder is copied to a new project, a fresh context will be ini
 **Agent**: system
 **Action**: Modified 1 skill, 1 command, 5 other
 **State Change**: Version v4.12.0 synced.
+
+### 2026-05-23 — Automated Registry Sync — v4.12.1
+**Agent**: system
+**Action**: Modified 18 workflows, 2 other
+**State Change**: Version v4.12.1 synced.
+
+### 2026-05-23 — Automated Registry Sync — v4.12.2
+**Agent**: system
+**Action**: Modified 19 workflows, 1 other
+**State Change**: Version v4.12.2 synced.
+
+### 2026-05-23 — Automated Registry Sync — v4.12.3
+**Agent**: system
+**Action**: Modified 19 workflows, 1 other
+**State Change**: Version v4.12.3 synced.
+
+### 2026-05-23 — Automated Registry Sync — v4.12.4
+**Agent**: system
+**Action**: Modified 19 workflows, 1 other
+**State Change**: Version v4.12.4 synced.
 
 
 ---
