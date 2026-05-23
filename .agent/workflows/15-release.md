@@ -1,15 +1,8 @@
 ---
-
 title: "RELEASE PROJECT"
-
 description: "God Mode: License, README, Packaging."
-
-order: 21
-
+order: 15
 ---
-
-
-
 # Workflow: Release Project
 
 

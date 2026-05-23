@@ -1,7 +1,7 @@
 ---
 title: "SYNC REGISTRY"
-description: "Synchronize all registry files with the actual .agent/ filesystem state."
-order: 23
+description: "Synchronize all registry files with actual .agent/ state."
+order: 16
 ---
 # Workflow: Sync Registry
 

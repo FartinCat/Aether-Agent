@@ -1,9 +1,8 @@
 ---
 title: "README ARCHITECT"
-description: "Dynamically updates the README.md to accurately reflect all active agents, workflows, and skills."
-order: 22
+description: "Dynamically updates README.md with active state."
+order: 18
 ---
-
 # Workflow: README Architect
 
 **Objective**: Ensure the main `README.md` file is an accurate, perfectly synced reflection of the `.agent/` architecture. 

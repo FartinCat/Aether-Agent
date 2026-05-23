@@ -1,15 +1,8 @@
 ---
-
 title: "MULTI PLAN SYNTHESIS"
-
 description: "Merge competing AI strategies into one plan."
-
-order: 4
-
+order: 6
 ---
-
-
-
 # Workflow: Multi-Plan Synthesis
 
 

@@ -1,11 +1,8 @@
 ---
 title: "MCP AUDIT"
-
 description: "Audit & map integrated MCP tool capabilities."
-
 order: 19
 ---
-
 # Workflow: MCP Capability Audit
 
 **Objective**: Establish complete awareness of the agent's integrated toolset and server health.

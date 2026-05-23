@@ -1,15 +1,8 @@
 ---
-
 title: "PERFORMANCE"
-
 description: "Profiling and bottleneck elimination."
-
-order: 8
-
+order: 12
 ---
-
-
-
 # Workflow: Performance Optimization
 
 

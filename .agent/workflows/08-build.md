@@ -1,3 +1,8 @@
+---
+title: "BUILD APP"
+description: "End-to-end production application build pipeline."
+order: 8
+---
 # Workflow: Build App
 
 **Objective**: End-to-end pipeline for building a production-ready software application from specification through implementation to deployment readiness. Enforces architectural discipline, test coverage, and clean code practices.

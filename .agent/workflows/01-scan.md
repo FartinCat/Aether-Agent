@@ -1,15 +1,8 @@
 ---
-
 title: "SCANNER"
-
 description: "Build situational awareness and map directories."
-
 order: 1
-
 ---
-
-
-
 # Workflow: Scanner (Project Awareness)
 
 

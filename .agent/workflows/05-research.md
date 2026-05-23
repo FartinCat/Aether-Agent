@@ -1,3 +1,8 @@
+---
+title: "PARALLEL RESEARCH"
+description: "Execute parallel technical research paths."
+order: 5
+---
 # Workflow: Parallel Research
 
 **Objective**: Execute simultaneous research across multiple technical paths, then synthesize findings into a unified comparison matrix. Use when evaluating competing technologies, frameworks, libraries, or architectural patterns.

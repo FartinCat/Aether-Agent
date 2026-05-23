@@ -1,3 +1,8 @@
+---
+title: "FEATURE DEVELOPMENT"
+description: "Incremental feature development loop."
+order: 9
+---
 # Workflow: Feature Development
 
 **Objective**: Incrementally build a single feature from specification through implementation to verification. This is the inner loop of development — one feature at a time, fully tested before moving to the next.

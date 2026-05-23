@@ -1,15 +1,8 @@
 ---
-
 title: "SPEC DISCOVERY"
-
 description: "Functional and technical spec extraction."
-
-order: 05
-
+order: 4
 ---
-
-
-
 # Workflow 05: Spec Discovery
 
 

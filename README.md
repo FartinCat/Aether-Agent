@@ -4,11 +4,11 @@
 ![Aether Agent Banner](assets/banner.png)
 
 
-# 🌌 Aether Agent Ecosystem (v4.12.0)
+# 🌌 Aether Agent Ecosystem (v4.12.4)
 **The Ultimate Agentic Operating System for Professional Software Engineering**
 
 
-[![Version](https://img.shields.io/badge/version-4.12.0-blueviolet?style=for-the-badge)](AETHER.md)
+[![Version](https://img.shields.io/badge/version-4.12.4-blueviolet?style=for-the-badge)](AETHER.md)
 [![License](https://img.shields.io/badge/license-AAEL-blue?style=for-the-badge)](LICENSE.md)
 [![Status](https://img.shields.io/badge/status-Production_Ready-green?style=for-the-badge)](#)
 

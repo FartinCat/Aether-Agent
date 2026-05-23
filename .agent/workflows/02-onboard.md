@@ -1,15 +1,8 @@
 ---
-
 title: "ONBOARD PROJECT"
-
 description: "Analyze legacy code and suggest initial strategy."
-
 order: 2
-
 ---
-
-
-
 # Workflow: Onboard New Project
 
 

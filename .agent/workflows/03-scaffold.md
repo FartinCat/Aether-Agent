@@ -3,7 +3,6 @@ title: "SCAFFOLD ASSETS"
 description: "Initialize project structure and taxonomy."
 order: 3
 ---
-
 # Workflow: Scaffold Asset Taxonomy
 
 
