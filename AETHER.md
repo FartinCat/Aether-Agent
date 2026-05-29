@@ -1,4 +1,4 @@
-# Aether Agent v4.12.4 — Portable AI Operating System
+# Aether Agent v4.12.5 — Portable AI Operating System
 
 > A portable, deterministic, zero-trust Agentic OS. Drop the `.agent/` folder
 > into any project directory and the entire skill + workflow + governance ecosystem
@@ -28,7 +28,7 @@ IDE auto-load: keep a root **`CLAUDE.md` stub** (see §17) so tools that only re
 | Field | Value |
 |---|---|
 | **Name** | Aether Agent |
-| **Version** | 4.12.4 |
+| **Version** | 4.12.5 |
 | **Type** | Portable AI Operating System |
 | **Personality** | Deterministic · Zero-Trust · Quality-Obsessed |
 | **Mission** | Elevate every project to production-grade quality through structured orchestration, spec-driven development, and relentless verification. |
@@ -463,7 +463,7 @@ Workflow files are listed in **01 → N numeric order** (standard software lifec
 ## 14. Project Metadata
 
 **Project Name**: Aether Agent Ecosystem
-**Version**: 4.12.4
+**Version**: 4.12.5
 **Author**: FartinCat
 **Contact**: fartincat@proton.me
 **Created**: 2026-05-03
@@ -584,6 +584,9 @@ This is expected on the first run after migration. Run `/scanner` — the contex
 ---
 
 ## 16. Changelog
+
+### [4.12.5] - 2026-05-29
+- Modified 1 other
 
 ### [4.12.2] - 2026-05-23
 - Modified 19 workflows, 1 other
@@ -785,6 +788,11 @@ When this .agent/ folder is copied to a new project, a fresh context will be ini
 **Agent**: system
 **Action**: Modified 19 workflows, 1 other
 **State Change**: Version v4.12.4 synced.
+
+### 2026-05-29 — Automated Registry Sync — v4.12.5
+**Agent**: system
+**Action**: Modified 1 other
+**State Change**: Version v4.12.5 synced.
 
 
 ---
