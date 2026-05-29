@@ -43,7 +43,7 @@ def main():
         print("Usage: python .agent/scripts/upgrade_project.py [path/to/target/project]")
         sys.exit(1)
         
-    target_dir = os.path.resolve(sys.argv[1])
+    target_dir = os.path.abspath(sys.argv[1])
     
     if not os.path.isdir(target_dir):
         print(f"ERROR: Target path is not a valid directory: {target_dir}")
@@ -79,12 +79,12 @@ def main():
         try:
             # We execute it in the context of the target directory
             subprocess.run([sys.executable, target_sync_script], cwd=target_dir, check=True)
-            print("\n🎉 Core Upgrade & Synchronization SUCCESSFUL!")
+            print("\n[SUCCESS] Core Upgrade & Synchronization SUCCESSFUL!")
         except Exception as e:
-            print(f"\n⚠ Warning: Synchronization encountered an issue: {e}")
+            print(f"\n[WARNING] Synchronization encountered an issue: {e}")
             print("Please run /sync-registry manually in your target project.")
     else:
-        print("\n🎉 Core Upgrade complete! Run /sync-registry in your target project to synchronize.")
+        print("\n[SUCCESS] Core Upgrade complete! Run /sync-registry in your target project to synchronize.")
 
 if __name__ == "__main__":
     main()
