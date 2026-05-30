@@ -1,5 +1,5 @@
 {
-  "version": "4.15.0",
+  "version": "4.15.3",
   "release_date": "2026-05-09",
   "installed_rules": [
     "00-workflow-orchestration.md",
@@ -147,7 +147,7 @@
     "commands": 17,
     "specialist_personas": 3
   },
-  "last_updated": "2026-05-30T09:08:08Z",
+  "last_updated": "2026-05-30T09:49:05Z",
   "changelog": {
     "4.7.0": "Quality Hardening: Upgraded sync engine, expanded 6 thin workflows, fixed CLAUDE.md structure, converted boot to lazy-loading.",
     "4.1.1": "Executed God Mode pipeline. Packaged v4.1.1 release archive.",
@@ -167,6 +167,9 @@
     "4.12.5": "Modified 1 other",
     "4.13.0": "Updates and improvements.",
     "4.14.0": "Modified 1 workflow, 1 command, 3 other",
-    "4.15.0": "Modified 1 workflow, 1 command, 4 other"
+    "4.15.0": "Modified 1 workflow, 1 command, 4 other",
+    "4.15.1": "Modified 1 other",
+    "4.15.2": "Modified 1 other",
+    "4.15.3": "Modified 1 other"
   }
 }
