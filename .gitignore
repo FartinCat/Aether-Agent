@@ -19,9 +19,13 @@ archived/references/*
 !archived/references/create-aether-agent/
 !archived/references/create-aether-agent/**
 
-# Business Evaluations (Sensitive)
-MARKET_EVALUATION.md
-docs/market-evaluations/
+# Private AI operating documents (kept offline to preserve IP)
+docs/scan-reports/
+docs/audit-reports/
+docs/master-plans/
+docs/research/
+docs/maps/
+docs/implementation_plan.md
 
 __pycache__/
 
