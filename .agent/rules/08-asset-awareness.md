@@ -1,3 +1,6 @@
+---
+category: ops
+---
 # Instinct: Asset Architecture Awareness
 
 **Trigger**: Activated upon initializing a new workspace, parsing a novel repository, or commencing structural code generation for any web, mobile, or document-based project.

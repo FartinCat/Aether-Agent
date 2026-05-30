@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Instinct: Asset Pruning
 
 ## The Pattern

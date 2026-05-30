@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Instinct: System-Wide Orchestration
 
 **Trigger**: Creation, modification, or presentation of ANY system component in the `.agent/` directory.

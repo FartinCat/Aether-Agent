@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Instinct: User Intent Preservation
 
 ## The Pattern

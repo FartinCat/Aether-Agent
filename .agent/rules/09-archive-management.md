@@ -1,3 +1,6 @@
+---
+category: ops
+---
 # Rule: Archive Management
 
 **Trigger**: Activated upon analyzing a project directory, running `planner`, or executing the `/release-project` workflow.

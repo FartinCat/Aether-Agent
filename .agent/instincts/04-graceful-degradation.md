@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Instinct: Graceful Degradation
 
 ## The Pattern

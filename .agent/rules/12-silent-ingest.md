@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Instinct: Silent Ingest
 
 **Trigger**: When the user provides bulk text, conversation history, or explicitly says "understand and keep quiet."

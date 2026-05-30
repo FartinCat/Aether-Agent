@@ -1,6 +1,7 @@
 ---
 rule: 15-context-engine
 priority: CRITICAL
+category: core
 ---
 
 # Rule 15: Context Engine — "Think in Code"

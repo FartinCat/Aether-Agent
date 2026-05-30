@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Universal Instincts Layer
 
 Instincts are probabilistic warnings — they fire a flag, not a halt. Unlike rules, a user can override an instinct with justification. Each instinct has a probability score indicating how often the flagged pattern is a real problem.

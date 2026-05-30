@@ -1,6 +1,7 @@
 ---
 rule: 17-agent-composition
 priority: HIGH
+category: core
 ---
 # Rule 17: Agent Composition and Orchestration
 

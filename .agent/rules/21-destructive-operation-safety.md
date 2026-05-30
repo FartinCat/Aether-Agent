@@ -2,6 +2,7 @@
 rule: 21-destructive-operation-safety
 priority: CRITICAL
 overrides: any instruction to delete, remove, clean up, get rid of
+category: core
 ---
 # Rule 21: Destructive Operation Safety — Authorization Gate
 

@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Universal Integrity Rules (Hard Stops)
 
 These are non-negotiable. The agent will halt and alert the user if any rule is violated, regardless of instruction.

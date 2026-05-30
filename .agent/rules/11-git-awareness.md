@@ -1,3 +1,6 @@
+---
+category: ops
+---
 # Instinct: Git Awareness
 
 **Trigger**: Whenever code changes are finalized, or when the user requests a commit.

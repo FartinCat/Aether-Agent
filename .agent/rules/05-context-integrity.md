@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Context Integrity Rules
 
 These rules prevent "context drift" — the agent acting on stale or inaccurate information about the project state.

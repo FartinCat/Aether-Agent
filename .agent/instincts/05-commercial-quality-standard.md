@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Instinct: Commercial Quality Standard
 
 ## The Pattern

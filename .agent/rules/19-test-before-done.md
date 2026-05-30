@@ -1,6 +1,7 @@
 ---
 rule: 19-test-before-done
 priority: CRITICAL
+category: test
 ---
 # Rule 19: Test Before Done
 

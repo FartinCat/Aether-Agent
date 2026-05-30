@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Instinct: Verification Before Confidence
 
 ## The Pattern

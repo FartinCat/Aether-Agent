@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Verification Gate System
 
 Every action passes through a gate before the agent declares it complete. Gates are layered and cumulative — each level includes all previous levels.

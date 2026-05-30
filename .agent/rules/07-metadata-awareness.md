@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Rule: Metadata Awareness
 
 All agents and workflows must maintain the integrity and accuracy of **`AETHER.md` Section 14 (Project Metadata)** at the repository root.

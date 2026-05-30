@@ -1,3 +1,6 @@
+---
+category: ops
+---
 # Instinct: Semantic Versioning Control
 
 **Trigger**: Whenever code is generated, bugs are patched, features are added, or a project enters a release state.

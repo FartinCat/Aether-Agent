@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Instinct: Minimal Footprint
 
 ## The Pattern

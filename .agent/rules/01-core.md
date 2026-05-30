@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Core Architectural Instincts
 
 These are the unbreakable, fundamental directives that dictate the agent's baseline operational state. They supersede all other instructions.

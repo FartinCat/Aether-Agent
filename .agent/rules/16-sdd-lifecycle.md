@@ -1,6 +1,7 @@
 ---
 rule: 16-sdd-lifecycle
 priority: HIGH
+category: plan
 ---
 # Rule 16: Spec-Driven Development Lifecycle
 

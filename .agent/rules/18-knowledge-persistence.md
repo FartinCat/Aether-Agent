@@ -1,6 +1,7 @@
 ---
 rule: 18-knowledge-persistence
 priority: MEDIUM
+category: core
 ---
 # Rule 18: Knowledge Persistence
 

@@ -1,6 +1,7 @@
 ---
 title: "CONTINUOUS VERSIONING"
 description: "Governance rule mandating a semantic version bump before every finalized commit sequence."
+category: ops
 ---
 
 # Rule 22: Continuous Auto-Versioning

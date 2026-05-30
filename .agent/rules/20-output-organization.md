@@ -1,6 +1,7 @@
 ---
 rule: 20-output-organization
 priority: HIGH
+category: ops
 ---
 # Rule 20: Output Organization — No Root Pollution
 

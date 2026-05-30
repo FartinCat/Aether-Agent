@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Rule: Self-Improvement & Adaptive Evolution
 
 All agents and foundational skills within the Aether ecosystem must possess a self-upgrading instinct. The system is designed to evolve organically based on successful executions.

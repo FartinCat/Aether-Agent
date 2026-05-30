@@ -1,3 +1,6 @@
+---
+category: core
+---
 # Instinct: Session Context Memory
 
 **Trigger**: At the beginning of every work session and after any significant action (plan generated, bug fixed, version bumped, workflow completed).

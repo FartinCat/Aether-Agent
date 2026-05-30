@@ -1,3 +1,6 @@
+---
+category: ops
+---
 # Instinct: Release Packaging
 
 **Trigger**: Successful execution of a version bump in **`AETHER.md`** or completion of the `15-release` workflow.
