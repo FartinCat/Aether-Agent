@@ -5,7 +5,7 @@
 # requires that path — do not add it here.
 
 # OpenCode session dump files (ephemeral, not project artifacts)
-session-ses_*.md
+/session-ses_*.md
 
 .gemini/
 
@@ -24,7 +24,6 @@ docs/scan-reports/
 docs/audit-reports/
 docs/master-plans/
 docs/research/
-docs/maps/
 docs/implementation_plan.md
 
 __pycache__/

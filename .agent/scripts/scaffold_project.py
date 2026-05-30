@@ -136,6 +136,8 @@ def scaffold():
         os.path.join(PROJECT_ROOT, "docs", "master-plans"),
         os.path.join(PROJECT_ROOT, "docs", "research"),
         os.path.join(PROJECT_ROOT, "docs", "market-evaluations"),
+        os.path.join(PROJECT_ROOT, "docs", "maps"),
+        os.path.join(PROJECT_ROOT, "docs", "opencode-sessions"),
         os.path.join(PROJECT_ROOT, "archived", "archive-registry"),
         os.path.join(PROJECT_ROOT, "archived", "current-version"),
         os.path.join(PROJECT_ROOT, "archived", "old-versions"),
@@ -144,6 +146,19 @@ def scaffold():
 
     for directory in empty_directories:
         ensure_directory(directory)
+
+    # ─── 2a. Move Root Session Dumps to docs/opencode-sessions/ ──────────
+    session_dir = os.path.join(PROJECT_ROOT, "docs", "opencode-sessions")
+    ensure_directory(session_dir)
+    for file in os.listdir(PROJECT_ROOT):
+        if file.startswith("session-ses_") and file.endswith(".md"):
+            src_file = os.path.join(PROJECT_ROOT, file)
+            dest_file = os.path.join(session_dir, file)
+            try:
+                shutil.move(src_file, dest_file)
+                print(f"Moved session dump: {file} -> docs/opencode-sessions/")
+            except Exception as e:
+                print(f"[WARNING] Could not move session dump {file}: {e}")
 
     # ─── 3. Write Stubs if Missing ─────────────────────────────────────
     agents_stub = os.path.join(PROJECT_ROOT, "AGENTS.md")

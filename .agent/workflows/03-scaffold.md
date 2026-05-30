@@ -20,10 +20,11 @@ category: ops
    ```
 
 2. **Smart Resolution & Safe Parsing**:
-   - The script automatically detects the environment and resolved `ASSETS_ROOT` (uses `src/assets/` if `src/` exists, otherwise `assets/` at root).
+   - The script automatically detects the environment and resolves `ASSETS_ROOT` (uses `src/assets/` if `src/` exists, otherwise `assets/` at root).
    - Generates taxonomy subfolders under `ASSETS_ROOT` (`images/`, `videos/`, `audios/`, `texts/`, `information/`, `icons/`).
-   - Standardizes documentation subfolders (`docs/scan-reports/`, `docs/audit-reports/`, `docs/master-plans/`, `docs/research/`, `docs/market-evaluations/`).
+   - Standardizes documentation subfolders (`docs/scan-reports/`, `docs/audit-reports/`, `docs/master-plans/`, `docs/research/`, `docs/market-evaluations/`, `docs/maps/`, `docs/opencode-sessions/`).
    - Initializes archive directories and stubs (`archived/archive-registry/DELETION_REGISTRY.md`, etc.).
+   - Automatically scans the project root for temporary session dumps (`session-ses_*.md`) and migrates them safely into `docs/opencode-sessions/` to keep the root directory pristine.
 
 3. **Smart Integration & Preservation**:
    - **`AETHER.md`**: If a pre-existing `AETHER.md` is present, the script extracts custom metadata (§14) and timeline logs (§18), reconstructs a fully formatted canonical `AETHER.md` matching the latest Aether governance rules, and cleanly merges the user's data back.
