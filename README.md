@@ -68,15 +68,15 @@ graph TD
     end
 
     subgraph P2: Strategy
-    Research[/05-research/]
+    PARALLELRESEARCH[/05-research/]
     MULTIPLANSYNTHESIS[/06-plan-synthesis/]
-    Research --> MULTIPLANSYNTHESIS
+    PARALLELRESEARCH --> MULTIPLANSYNTHESIS
     KNOWLEDGECAPTURE[/07-knowledge-capture/]
     MULTIPLANSYNTHESIS --> KNOWLEDGECAPTURE
-    Build[/08-build/]
-    KNOWLEDGECAPTURE --> Build
-    Feature[/09-feature/]
-    Build --> Feature
+    BUILDAPP[/08-build/]
+    KNOWLEDGECAPTURE --> BUILDAPP
+    FEATUREDEVELOPMENT[/09-feature/]
+    BUILDAPP --> FEATUREDEVELOPMENT
     end
 
     subgraph P3: Execution
@@ -97,26 +97,28 @@ graph TD
 
     subgraph P4: Quality
     AUTOCOMMIT[/17-auto-commit/]
+    READMEARCHITECT[/18-readme-architect/]
+    AUTOCOMMIT --> READMEARCHITECT
+    MCPAUDIT[/19-mcp-audit/]
+    READMEARCHITECT --> MCPAUDIT
     end
 
     subgraph P5: Finalization
-    READMEARCHITECT[/22-readme-architect/]
     end
 
-    SPECDISCOVERY --> Research
-    Feature --> TDD
+    SPECDISCOVERY --> PARALLELRESEARCH
+    FEATUREDEVELOPMENT --> TDD
     SYNCREGISTRY --> AUTOCOMMIT
-    AUTOCOMMIT --> READMEARCHITECT
 
     style SCANNER fill:#0d47a1,color:#fff
     style ONBOARDPROJECT fill:#0d47a1,color:#fff
     style SCAFFOLDASSETS fill:#0d47a1,color:#fff
     style SPECDISCOVERY fill:#0d47a1,color:#fff
-    style Research fill:#1565c0,color:#fff
+    style PARALLELRESEARCH fill:#1565c0,color:#fff
     style MULTIPLANSYNTHESIS fill:#1565c0,color:#fff
     style KNOWLEDGECAPTURE fill:#1565c0,color:#fff
-    style Build fill:#1565c0,color:#fff
-    style Feature fill:#1565c0,color:#fff
+    style BUILDAPP fill:#1565c0,color:#fff
+    style FEATUREDEVELOPMENT fill:#1565c0,color:#fff
     style TDD fill:#1976d2,color:#fff
     style DEBUGSESSION fill:#1976d2,color:#fff
     style PERFORMANCE fill:#1976d2,color:#fff
@@ -125,7 +127,9 @@ graph TD
     style RELEASEPROJECT fill:#1976d2,color:#fff
     style SYNCREGISTRY fill:#1976d2,color:#fff
     style AUTOCOMMIT fill:#1e88e5,color:#fff
-    style READMEARCHITECT fill:#2196f3,color:#fff
+    style READMEARCHITECT fill:#1e88e5,color:#fff
+    style MCPAUDIT fill:#1e88e5,color:#fff
+    style  fill:#2196f3,color:#fff
 ```
 
 
@@ -193,21 +197,21 @@ They are listed in logical ascending order of the 5-Phase software lifecycle.
 | **02** | `ONBOARD PROJECT` | `/02-onboard` | "onboard project" | Analyze legacy code and suggest initial strategy. |
 | **03** | `SCAFFOLD ASSETS` | `/03-scaffold` | "scaffold assets" | Initialize project structure and taxonomy. |
 | **04** | `SPEC DISCOVERY` | `/04-spec` | "spec discovery" | Functional and technical spec extraction. |
-| **05** | `Research` | `/05-research` | "research" | Workflow execution. |
+| **05** | `PARALLEL RESEARCH` | `/05-research` | "parallel research" | Execute parallel technical research paths. |
 | **06** | `MULTI PLAN SYNTHESIS` | `/06-plan-synthesis` | "multi plan synthesis" | Merge competing AI strategies into one plan. |
 | **07** | `KNOWLEDGE CAPTURE` | `/07-knowledge-capture` | "knowledge capture" | Distill project insights into persistent KIs. |
-| **08** | `Build` | `/08-build` | "build" | Workflow execution. |
-| **09** | `Feature` | `/09-feature` | "feature" | Workflow execution. |
+| **08** | `BUILD APP` | `/08-build` | "build app" | End-to-end production application build pipeline. |
+| **09** | `FEATURE DEVELOPMENT` | `/09-feature` | "feature development" | Incremental feature development loop. |
 | **10** | `TDD` | `/10-tdd` | "tdd" | Disciplined Red-Green-Refactor orchestration. |
 | **11** | `DEBUG SESSION` | `/11-debug` | "debug session" | Intensive diagnostic and repair protocol. |
 | **12** | `PERFORMANCE` | `/12-performance` | "performance" | Profiling and bottleneck elimination. |
 | **13** | `QUALITY GATE` | `/13-quality-gate` | "quality gate" | Compliance check against design/requirements. |
 | **14** | `CROSS AGENT VALIDATOR` | `/14-validate` | "cross agent validator" | Audit previous steps for hallucinations/errors. |
 | **15** | `RELEASE PROJECT` | `/15-release` | "release project" | God Mode: License, README, Packaging. |
-| **16** | `SYNC REGISTRY` | `/16-sync-registry` | "sync registry" | Synchronize all registry files with the actual .agent/ filesystem state. |
+| **16** | `SYNC REGISTRY` | `/16-sync-registry` | "sync registry" | Synchronize all registry files with actual .agent/ state. |
 | **17** | `AUTO COMMIT` | `/17-auto-commit` | "auto commit" | Atomic, semantic commit generation loop. |
-| **18** | `MCP AUDIT` | `/21-mcp-audit` | "audit mcp servers" | Audits MCP servers, syncs validated server definitions, and writes reports under `docs/audit-reports/`. |
-| **22** | `README ARCHITECT` | `/22-readme-architect` | "readme architect" | Dynamically updates the README.md to accurately reflect all active agents, workflows, and skills. |
+| **18** | `README ARCHITECT` | `/18-readme-architect` | "readme architect" | Dynamically updates README.md with active state. |
+| **19** | `MCP AUDIT` | `/19-mcp-audit` | "mcp audit" | Audit & map integrated MCP tool capabilities. |
 
 ---
 
@@ -237,7 +241,7 @@ Implicit reasoning modules that govern every agent's internal logic.
 - **`19-performance-profiling`**: Optimizes application performance. Use when performance requirements exist, when you suspect performance regressions, or when Core Web Vitals or load times need improvement. Use when profiling reveals bottlenecks that need fixing.
 - **`20-stitch-ui`**: Unified entry point for Stitch design work. Handles prompt enhancement (UI/UX keywords, atmosphere), design system synthesis (.stitch/DESIGN.md), and high-fidelity screen generation/editing via Stitch MCP.
 - **`21-mcp-audit`**: This protocol defines the technical procedure for auditing the Model Context Protocol (MCP) servers integrated into the Aether Agent. It is the only protocol authorized to bypass the `.agent/` exclusion rule for infrastructure discovery.
-- **`22-registry-synchronizer`**: Run it with: ```bash python .agent/scripts/sync_registry.py ```
+- **`22-registry-synchronizer`**: Run it with: ```bash python .agent/scripts/sync_registry.py python .agent/scripts/sync_registry.py --no-bump python .agent/scripts/sync_registry.py --no-bump --regen-section13   # rebuild §13 from disk only ```
 
 ---
 
