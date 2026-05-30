@@ -1,6 +1,6 @@
 # Aether Agent Ecosystem License (AAEL) v1.0
 
-Applies to Software Version: v4.15.4
+Applies to Software Version: v4.15.5
 
 Copyright (c) 2026 FartinCat
 
