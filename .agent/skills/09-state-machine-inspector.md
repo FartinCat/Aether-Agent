@@ -1,6 +1,7 @@
 ---
 name: state-machine-inspector
 description: Skill for state-machine-inspector
+category: review
 ---
 
 # State Machine Inspector

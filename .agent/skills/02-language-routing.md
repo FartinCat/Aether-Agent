@@ -1,6 +1,7 @@
 ---
 name: language-routing
 description: Skill for language-routing
+category: core
 ---
 
 # Language Routing Protocol

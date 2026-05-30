@@ -1,6 +1,7 @@
 ---
 name: confidence-scoring
 description: Skill for confidence-scoring
+category: core
 ---
 
 # Confidence Scoring System

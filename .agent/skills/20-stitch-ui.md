@@ -5,6 +5,7 @@ allowed-tools:
   - "StitchMCP"
   - "Read"
   - "Write"
+category: ui
 ---
 
 # Stitch Design Expert

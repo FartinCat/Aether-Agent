@@ -1,6 +1,7 @@
 ---
 name: commit-semantics
 description: Skill for commit-semantics
+category: ops
 ---
 
 # Commit Semantics and Diff Analysis

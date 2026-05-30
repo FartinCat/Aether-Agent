@@ -1,6 +1,7 @@
 ---
 name: code-synthesis
 description: Skill for code-synthesis
+category: build
 ---
 
 # Code Synthesis Logic (Advanced)

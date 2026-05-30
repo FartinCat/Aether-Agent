@@ -1,3 +1,6 @@
+---
+category: ops
+---
 # Skill: Registry Synchronizer
 
 ## Purpose

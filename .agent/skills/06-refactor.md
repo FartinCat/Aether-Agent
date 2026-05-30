@@ -1,6 +1,7 @@
 ---
 name: refactor
 description: Skill for refactor
+category: build
 ---
 
 # Refactor Logic

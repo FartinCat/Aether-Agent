@@ -1,6 +1,7 @@
 ---
 name: architectural-design
 description: Skill for architectural-design
+category: build
 ---
 
 # Architectural Design Principles (Advanced)

@@ -1,3 +1,6 @@
+---
+category: ops
+---
 # MCP Capability Audit Protocol
 
 This protocol defines the technical procedure for auditing the Model Context Protocol (MCP) servers integrated into the Aether Agent. It is the only protocol authorized to bypass the `.agent/` exclusion rule for infrastructure discovery.

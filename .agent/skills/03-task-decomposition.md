@@ -1,6 +1,7 @@
 ---
 name: task-decomposition
 description: Skill for task-decomposition
+category: plan
 ---
 
 # Task Decomposition Protocol (Low-Tier LLM Compensation)

@@ -1,6 +1,7 @@
 ---
 name: side-effect-tracker
 description: Skill for side-effect-tracker
+category: review
 ---
 
 # Side-Effect Tracker

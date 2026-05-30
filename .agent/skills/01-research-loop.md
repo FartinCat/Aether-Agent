@@ -1,6 +1,7 @@
 ---
 name: research-loop
 description: Skill for research-loop
+category: scan
 ---
 
 # Research Loop Protocol

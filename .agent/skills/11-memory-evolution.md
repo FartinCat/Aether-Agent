@@ -1,6 +1,7 @@
 ---
 name: memory-evolution
 description: Skill for memory-evolution
+category: core
 ---
 
 # Memory Evolution Protocol

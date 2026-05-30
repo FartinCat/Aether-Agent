@@ -1,6 +1,7 @@
 ---
 name: cognitive-load-inspector
 description: Skill for cognitive-load-inspector
+category: review
 ---
 
 # Cognitive Load Inspector

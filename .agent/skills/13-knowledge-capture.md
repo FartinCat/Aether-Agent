@@ -1,6 +1,7 @@
 ---
 name: capture-knowledge
 description: Capture structured knowledge about a code entry point and save it to the knowledge docs. Use when users ask to document, understand, or map code for a module, file, folder, function, or API.
+category: docs
 ---
 
 # Knowledge Capture Assistant
