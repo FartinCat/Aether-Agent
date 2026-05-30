@@ -4,11 +4,11 @@
 ![Aether Agent Banner](assets/banner.png)
 
 
-# 🌌 Aether Agent Ecosystem (v4.12.5)
+# 🌌 Aether Agent Ecosystem (v4.15.0)
 **The Ultimate Agentic Operating System for Professional Software Engineering**
 
 
-[![Version](https://img.shields.io/badge/version-4.12.5-blueviolet?style=for-the-badge)](AETHER.md)
+[![Version](https://img.shields.io/badge/version-4.15.0-blueviolet?style=for-the-badge)](AETHER.md)
 [![License](https://img.shields.io/badge/license-AAEL-blue?style=for-the-badge)](LICENSE.md)
 [![Status](https://img.shields.io/badge/status-Production_Ready-green?style=for-the-badge)](#)
 
@@ -131,67 +131,23 @@ graph TD
 
 ---
 
-
 ## 📥 Deployment Guide (Installation)
 
-Aether Agent is designed to be **injected** into any directory. To install manually, copy the agent runtime, IDE stubs, and root metadata into the folder you want to use as the new project root. If you want a one-command setup, use the npm scaffolder.
+Aether Agent is designed to be **injected** into any directory using `npx`. This ensures conflict-free integration.
+
+### 🚀 Installation
+Run the following command at the root of the folder you want to use as your new project root:
 
 ```bash
-npm create aether-agent ./your-project
+npx create-aether-agent .
 ```
 
+This will safely install the core `.agent/` and `.claude/` system folders into your project.
 
-### 🐧 Linux / 🍎 macOS / 💻 WSL
-
-Use `rsync` to preserve file permissions and structure:
-
-```bash
-# Navigate to your target project
-cd /path/to/your-project
-
-# Copy the core infrastructure
-rsync -av --exclude='.git' "/path/to/Aether-Agent/.agent/" "./.agent/"
-rsync -av --exclude='.git' "/path/to/Aether-Agent/.claude/" "./.claude/"
-cp "/path/to/Aether-Agent/AETHER.md" "./AETHER.md"
-cp "/path/to/Aether-Agent/CLAUDE.md" "./CLAUDE.md"
-cp "/path/to/Aether-Agent/AGENTS.md" "./AGENTS.md"
-cp "/path/to/Aether-Agent/.mcp.json" "./.mcp.json"
-# Optional: copy .codex/ if your IDE uses it
-```
-
-
-### 🪟 Windows (PowerShell)
-
-Use `Copy-Item` with recurse:
-
-```powershell
-# Copy the .agent folder
-Copy-Item -Recurse -Force "C:\Aether-Agent\.agent" "C:\Your-Project\.agent"
-
-# Copy the .claude folder
-Copy-Item -Recurse -Force "C:\Aether-Agent\.claude" "C:\Your-Project\.claude"
-
-# Copy root metadata and IDE stubs
-Copy-Item -Force "C:\Aether-Agent\AETHER.md" "C:\Your-Project\AETHER.md"
-Copy-Item -Force "C:\Aether-Agent\CLAUDE.md" "C:\Your-Project\CLAUDE.md"
-Copy-Item -Force "C:\Aether-Agent\AGENTS.md" "C:\Your-Project\AGENTS.md"
-Copy-Item -Force "C:\Aether-Agent\.mcp.json" "C:\Your-Project\.mcp.json"
-```
-
-
-### 🚀 First-Boot Sequence
-
-Once installed, run these two commands in order via your AI IDE (Cursor/Windsurf/Claude Code/Gemini):
-1. `/01-scan` — Detects the environment and initializes project memory.
-2. `/03-scaffold` — Creates the portable project skeleton, including `assets/`, `docs/`, and `archived/`.
-
-After `/01-scan`, the session context rebases to the folder you copied into. If you move the same `.agent/` bundle into a different directory, run `/01-scan` again and it will rebind to the new project root.
-
-The npm scaffolder installs the same bundle into the target folder and then you run `/01-scan` there to bind the workflows and session context to that path.
-
-
----
-
+### ⚡ First-Boot & Scaffolding
+Once the core files are installed, run these two commands in order via your AI IDE chat (Cursor/Windsurf/Claude Code):
+1. **/01-scan** — Detects the environment and initializes project memory.
+2. **/03-scaffold** — Safely generates the standard project folders (assets, docs, archives) and stubs without conflicts.
 
 ## 🤖 The Agent Arsenal (Specialists)
 

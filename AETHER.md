@@ -1,4 +1,4 @@
-# Aether Agent v4.13.0 — Portable AI Operating System
+# Aether Agent v4.15.0 — Portable AI Operating System
 
 > A portable, deterministic, zero-trust Agentic OS. Drop the `.agent/` folder
 > into any project directory and the entire skill + workflow + governance ecosystem
@@ -28,7 +28,7 @@ IDE auto-load: keep a root **`CLAUDE.md` stub** (see §17) so tools that only re
 | Field | Value |
 |---|---|
 | **Name** | Aether Agent |
-| **Version** | 4.13.0 |
+| **Version** | 4.15.0 |
 | **Type** | Portable AI Operating System |
 | **Personality** | Deterministic · Zero-Trust · Quality-Obsessed |
 | **Mission** | Elevate every project to production-grade quality through structured orchestration, spec-driven development, and relentless verification. |
@@ -392,6 +392,7 @@ Workflow files are listed in **01 → N numeric order** (standard software lifec
 - **`17-auto-commit.md`**: Atomic, semantic commit generation loop.
 - **`18-readme-architect.md`**: Dynamically updates README.md with active state.
 - **`19-mcp-audit.md`**: Audit & map integrated MCP tool capabilities.
+- **`README.md`**: Workflows are **multi-step recipes** that orchestrate agents, skills, and rules into complete operations. Each file defines a pipeline (scan → spec → build → test → release). The numeric prefix defines lifecycle order.
 
 ### After this workflow … (typical handoffs)
 
@@ -431,7 +432,7 @@ Workflow files are listed in **01 → N numeric order** (standard software lifec
 │   ├── 00-workflow-orchestration.md
 │   ├── 01-core.md
 │   ├── 02-integrity.md
-│   ├── ... (23 rules total)
+│   ├── ... (24 rules total)
 ├── skills/ (Foundational Logic)
 │   ├── 01-research-loop.md
 │   ├── 02-language-routing.md
@@ -457,13 +458,14 @@ Workflow files are listed in **01 → N numeric order** (standard software lifec
     ├── 17-auto-commit.md
     ├── 18-readme-architect.md
     ├── 19-mcp-audit.md
+    ├── README.md
 ```
 
 
 ## 14. Project Metadata
 
 **Project Name**: Aether Agent Ecosystem
-**Version**: 4.13.0
+**Version**: 4.15.0
 **Author**: FartinCat
 **Contact**: fartincat@proton.me
 **Created**: 2026-05-03
@@ -584,6 +586,12 @@ This is expected on the first run after migration. Run `/scanner` — the contex
 ---
 
 ## 16. Changelog
+
+### [4.15.0] - 2026-05-30
+- Modified 1 workflow, 1 command, 4 other
+
+### [4.14.0] - 2026-05-30
+- Modified 1 workflow, 1 command, 3 other
 
 ### [4.13.0] - 2026-05-30
 - **Domain Category System**: Added `category:` frontmatter to all 100+ system files across 10 domains (core, scan, plan, build, test, review, security, ui, docs, ops)
@@ -803,6 +811,21 @@ When this .agent/ folder is copied to a new project, a fresh context will be ini
 **Agent**: system
 **Action**: Modified 1 other
 **State Change**: Version v4.12.5 synced.
+
+### 2026-05-30 — Automated Registry Sync — v4.13.0
+**Agent**: system
+**Action**: Updates and improvements.
+**State Change**: Version v4.13.0 synced.
+
+### 2026-05-30 — Automated Registry Sync — v4.14.0
+**Agent**: system
+**Action**: Modified 1 workflow, 1 command, 3 other
+**State Change**: Version v4.14.0 synced.
+
+### 2026-05-30 — Automated Registry Sync — v4.15.0
+**Agent**: system
+**Action**: Modified 1 workflow, 1 command, 4 other
+**State Change**: Version v4.15.0 synced.
 
 
 ---
