@@ -28,7 +28,7 @@ def check_registry_drift(root):
     agent_skills_dir = os.path.join(root, '.agent', '.agents', 'skills')
     
     rules_on_disk = len([f for f in os.listdir(rules_dir) if f.endswith('.md')])
-    skills_on_disk = len([f for f in os.listdir(skills_dir) if f.endswith('.md')])
+    skills_on_disk = len([f for f in os.listdir(skills_dir) if f.endswith('.md') and f != 'README.md'])
     workflows_on_disk = len([f for f in os.listdir(workflows_dir) if f.endswith('.md')])
     agent_skills_on_disk = len([d for d in os.listdir(agent_skills_dir) if os.path.isdir(os.path.join(agent_skills_dir, d))])
     
