@@ -1,5 +1,5 @@
 {
-  "version": "4.12.5",
+  "version": "4.15.0",
   "release_date": "2026-05-09",
   "installed_rules": [
     "00-workflow-orchestration.md",
@@ -24,7 +24,8 @@
     "19-test-before-done.md",
     "20-output-organization.md",
     "21-destructive-operation-safety.md",
-    "22-continuous-versioning.md"
+    "22-continuous-versioning.md",
+    "README.md"
   ],
   "installed_foundational_skills": [
     "01-research-loop.md",
@@ -69,7 +70,8 @@
     "16-sync-registry.md",
     "17-auto-commit.md",
     "18-readme-architect.md",
-    "19-mcp-audit.md"
+    "19-mcp-audit.md",
+    "README.md"
   ],
   "installed_skills": [
     "01-deep-scan",
@@ -105,6 +107,7 @@
     "06-asset-pruning.md"
   ],
   "installed_commands": [
+    "README.md",
     "ag-ask.md",
     "ag-refresh.md",
     "antibug.md",
@@ -114,6 +117,7 @@
     "plan.md",
     "planner.md",
     "review.md",
+    "scaffold.md",
     "scanner.md",
     "ship.md",
     "spec.md",
@@ -135,15 +139,15 @@
     "supabase"
   ],
   "component_counts": {
-    "rules": 23,
+    "rules": 24,
     "foundational_skills": 22,
-    "workflows": 19,
+    "workflows": 20,
     "agent_personas": 23,
     "instincts": 6,
-    "commands": 15,
+    "commands": 17,
     "specialist_personas": 3
   },
-  "last_updated": "2026-05-29T17:36:02Z",
+  "last_updated": "2026-05-30T09:08:08Z",
   "changelog": {
     "4.7.0": "Quality Hardening: Upgraded sync engine, expanded 6 thin workflows, fixed CLAUDE.md structure, converted boot to lazy-loading.",
     "4.1.1": "Executed God Mode pipeline. Packaged v4.1.1 release archive.",
@@ -160,6 +164,9 @@
     "4.12.2": "Modified 19 workflows, 1 other",
     "4.12.3": "Modified 19 workflows, 1 other",
     "4.12.4": "Modified 19 workflows, 1 other",
-    "4.12.5": "Modified 1 other"
+    "4.12.5": "Modified 1 other",
+    "4.13.0": "Updates and improvements.",
+    "4.14.0": "Modified 1 workflow, 1 command, 3 other",
+    "4.15.0": "Modified 1 workflow, 1 command, 4 other"
   }
 }
