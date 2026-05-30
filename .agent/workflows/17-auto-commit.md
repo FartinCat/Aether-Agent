@@ -2,6 +2,7 @@
 title: "AUTO COMMIT"
 description: "Atomic, semantic commit generation loop."
 order: 17
+category: ops
 ---
 # Workflow: Auto-Commit Pipeline
 

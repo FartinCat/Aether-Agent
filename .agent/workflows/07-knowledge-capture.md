@@ -2,6 +2,7 @@
 title: "KNOWLEDGE CAPTURE"
 description: "Distill project insights into persistent KIs."
 order: 7
+category: plan
 ---
 # Workflow: Knowledge Capture
 

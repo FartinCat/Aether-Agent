@@ -2,6 +2,7 @@
 title: "QUALITY GATE"
 description: "Compliance check against design/requirements."
 order: 13
+category: test
 ---
 # Workflow: Quality Gate
 

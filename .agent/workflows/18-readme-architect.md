@@ -2,6 +2,7 @@
 title: "README ARCHITECT"
 description: "Dynamically updates README.md with active state."
 order: 18
+category: docs
 ---
 # Workflow: README Architect
 

@@ -2,6 +2,7 @@
 title: "MCP AUDIT"
 description: "Audit & map integrated MCP tool capabilities."
 order: 19
+category: ops
 ---
 # Workflow: MCP Capability Audit
 

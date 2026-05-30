@@ -2,6 +2,7 @@
 title: "SPEC DISCOVERY"
 description: "Functional and technical spec extraction."
 order: 4
+category: plan
 ---
 # Workflow 05: Spec Discovery
 

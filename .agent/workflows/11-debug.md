@@ -2,6 +2,7 @@
 title: "DEBUG SESSION"
 description: "Intensive diagnostic and repair protocol."
 order: 11
+category: review
 ---
 # Workflow: Debug Session
 

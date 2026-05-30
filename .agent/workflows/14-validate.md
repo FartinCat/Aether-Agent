@@ -2,6 +2,7 @@
 title: "CROSS AGENT VALIDATOR"
 description: "Audit previous steps for hallucinations/errors."
 order: 14
+category: review
 ---
 # Workflow: Cross-Agent Validator
 

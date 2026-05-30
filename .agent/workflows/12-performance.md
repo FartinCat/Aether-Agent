@@ -2,6 +2,7 @@
 title: "PERFORMANCE"
 description: "Profiling and bottleneck elimination."
 order: 12
+category: ops
 ---
 # Workflow: Performance Optimization
 

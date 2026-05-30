@@ -2,6 +2,7 @@
 title: "FEATURE DEVELOPMENT"
 description: "Incremental feature development loop."
 order: 9
+category: build
 ---
 # Workflow: Feature Development
 

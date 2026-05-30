@@ -2,6 +2,7 @@
 title: "SYNC REGISTRY"
 description: "Synchronize all registry files with actual .agent/ state."
 order: 16
+category: ops
 ---
 # Workflow: Sync Registry
 

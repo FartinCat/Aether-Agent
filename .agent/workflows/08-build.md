@@ -2,6 +2,7 @@
 title: "BUILD APP"
 description: "End-to-end production application build pipeline."
 order: 8
+category: build
 ---
 # Workflow: Build App
 

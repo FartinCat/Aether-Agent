@@ -2,6 +2,7 @@
 title: "TDD"
 description: "Disciplined Red-Green-Refactor orchestration."
 order: 10
+category: test
 ---
 # Workflow: TDD Cycle
 

@@ -2,6 +2,7 @@
 title: "PARALLEL RESEARCH"
 description: "Execute parallel technical research paths."
 order: 5
+category: plan
 ---
 # Workflow: Parallel Research
 
