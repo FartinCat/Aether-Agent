@@ -1,6 +1,7 @@
 ---
 name: "source-command-ship"
 description: "Run parallel fan-out to code-reviewer, security-auditor, and test-engineer, then synthesize a go/no-go decision"
+category: ops
 ---
 
 # source-command-ship

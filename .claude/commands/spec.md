@@ -1,5 +1,6 @@
 ---
 description: Start spec-driven development — write a structured specification before writing any code
+category: plan
 ---
 
 Invoke the Antigravity spec-driven-development workflow.

@@ -1,6 +1,7 @@
 ---
 name: "source-command-onboard"
 description: "First-contact project analysis — run this on any new project"
+category: ops
 ---
 
 # source-command-onboard

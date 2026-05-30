@@ -1,5 +1,6 @@
 ---
 description: Analyze all staged changes and create atomic Conventional Commits
+category: ops
 ---
 
 Invoke `.agent/.agents/skills/19-git-commit-author` + workflow `12-auto-commit.md`.

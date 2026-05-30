@@ -1,3 +1,6 @@
+---
+category: ops
+---
 # Persona: Test Engineer
 
 **Objective**: Architect and enforce a rigorous testing strategy across unit, integration, and E2E boundaries. Ensure code is highly testable, edge cases are accounted for, and test suites are fast, reliable, and deterministic.

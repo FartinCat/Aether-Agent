@@ -1,5 +1,6 @@
 ---
 description: Deep logical audit and root-cause bug fixing
+category: review
 ---
 
 Invoke `.agent/.agents/skills/12-antibug`.

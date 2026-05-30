@@ -2,6 +2,7 @@
 name: commercial-license
 description: Generates a custom LICENSE.md enforcing commercial fees and validation-based contributor access.
 origin: Custom Ensemble
+category: ops
 ---
 
 # Commercial License Generator

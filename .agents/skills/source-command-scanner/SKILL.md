@@ -1,6 +1,7 @@
 ---
 name: "source-command-scanner"
 description: "Map the entire repository before any work begins — project-aware deep scan"
+category: scan
 ---
 
 # source-command-scanner

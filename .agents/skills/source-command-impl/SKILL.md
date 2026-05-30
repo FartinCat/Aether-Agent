@@ -1,6 +1,7 @@
 ---
 name: "source-command-impl"
 description: "Implement the next task incrementally — build, test, verify, commit"
+category: build
 ---
 
 # source-command-impl

@@ -2,6 +2,7 @@
 name: readme-architect
 description: Generates a highly structured, comprehensive, and engaging README.md for the project from a layman's perspective.
 origin: Custom Ensemble
+category: docs
 ---
 
 # README Architect

@@ -1,5 +1,6 @@
 ---
 description: Enforce strict TDD Red-Green-Refactor cycle
+category: test
 ---
 
 Invoke `.agent/.agents/skills/06-tdd-guide`.

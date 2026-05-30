@@ -2,6 +2,7 @@
 name: c-agent
 description: C-specific language agent. Encodes C rules, instincts, and verification workflows for safe, defensive C programming.
 origin: Custom Ensemble (Claude + DeepSeek + Gemini)
+category: build
 ---
 
 # Agent: C Language Specialist

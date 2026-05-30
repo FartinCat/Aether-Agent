@@ -1,5 +1,6 @@
 ---
 description: Audit and upgrade UI/UX to premium standards, powered by UI/UX Pro Max.
+category: ui
 ---
 
 Invoke `.agent/.agents/skills/13-web-aesthetics` in tandem with [ui-ux-pro-max](file:///d:/Git_Work/Aether%20Agent/.agent/skills/ui-ux-pro-max/SKILL.md).

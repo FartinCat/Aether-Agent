@@ -1,5 +1,6 @@
 ---
 description: Synchronize install-state.json and AETHER.md §13 with actual .agent/ filesystem state
+category: ops
 ---
 Run workflow `16-sync-registry.md` (or execute `python .agent/scripts/sync_registry.py`).
 Detect drift between `.agent/` filesystem and registry documents.

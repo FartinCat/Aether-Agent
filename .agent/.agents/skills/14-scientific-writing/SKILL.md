@@ -2,6 +2,7 @@
 name: scientific-writing
 description: Specialized rules for writing physics dissertations, academic reports, and LaTeX formatting. Ensures a rigorous, objective, and consistent scientific tone.
 origin: Custom Ensemble
+category: docs
 ---
 
 # Scientific Writing & LaTeX Formatting

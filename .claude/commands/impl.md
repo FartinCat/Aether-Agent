@@ -1,5 +1,6 @@
 ---
 description: Implement the next task incrementally — build, test, verify, commit
+category: build
 ---
 
 Invoke the Antigravity incremental-implementation + tdd-guide workflow.

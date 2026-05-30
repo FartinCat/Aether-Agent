@@ -2,6 +2,7 @@
 name: rust-agent
 description: Rust-specific language agent. Encodes Rust rules, instincts, ownership preflight protocol, and verification workflows for safe, idiomatic Rust development.
 origin: Custom Ensemble (Claude + DeepSeek + Gemini)
+category: build
 ---
 
 # Agent: Rust Language Specialist

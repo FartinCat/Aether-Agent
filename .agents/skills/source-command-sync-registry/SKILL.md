@@ -1,6 +1,7 @@
 ---
 name: "source-command-sync-registry"
 description: "Synchronize install-state.json and AETHER.md §13 with actual .agent/ filesystem state"
+category: ops
 ---
 
 # source-command-sync-registry

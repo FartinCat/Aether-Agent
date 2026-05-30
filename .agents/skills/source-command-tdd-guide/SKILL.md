@@ -1,6 +1,7 @@
 ---
 name: "source-command-tdd-guide"
 description: "Enforce strict TDD Red-Green-Refactor cycle"
+category: test
 ---
 
 # source-command-tdd-guide

@@ -1,6 +1,7 @@
 ---
 name: "source-command-plan"
 description: "Break work into small verifiable tasks with acceptance criteria and dependency ordering"
+category: plan
 ---
 
 # source-command-plan

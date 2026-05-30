@@ -2,6 +2,7 @@
 name: tdd-guide
 description: Strict Test-Driven Development agent. Enforces the Red-Green-Refactor cycle for every piece of logic. Writes the test first, then the minimum code to pass it, then cleans up. Never writes untested production code.
 origin: Custom Ensemble
+category: test
 ---
 
 # Agent: TDD Guide

@@ -2,6 +2,7 @@
 name: planner
 description: Strategic breakdown of complex requirements into phased, dependency-aware implementation roadmaps. Reads Plan/ folder and archived/ history before writing a single step.
 origin: Custom Ensemble
+category: plan
 ---
 
 # Agent: Planner

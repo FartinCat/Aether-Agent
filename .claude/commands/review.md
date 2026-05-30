@@ -1,5 +1,6 @@
 ---
 description: Run a five-axis code review on current changes
+category: review
 ---
 
 Invoke the code-reviewer persona from `.claude/agents/code-reviewer.md`.

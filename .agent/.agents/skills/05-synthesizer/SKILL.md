@@ -2,6 +2,7 @@
 name: synthesizer
 description: Ensemble Plan Evaluation and Master Synthesis agent. Reads multiple AI plans from the Plan/ folder, reconciles them against the actual codebase, and generates a single bugless master implementation strategy.
 origin: Custom Ensemble
+category: plan
 ---
 
 # Agent: Synthesizer

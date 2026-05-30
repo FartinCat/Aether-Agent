@@ -2,6 +2,7 @@
 name: jsts-agent
 description: JavaScript/TypeScript-specific language agent. Encodes JS/TS rules, instincts, and verification workflows for modern, type-safe web development.
 origin: Custom Ensemble (Claude + DeepSeek + Gemini)
+category: build
 ---
 
 # Agent: JavaScript/TypeScript Language Specialist

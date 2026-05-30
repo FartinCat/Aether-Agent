@@ -2,6 +2,7 @@
 name: ask
 description: Quick, precise answers to doubts with medium context. Works in tandem with deep-scan.
 origin: Custom
+category: core
 ---
 
 # 💬 Ask Agent

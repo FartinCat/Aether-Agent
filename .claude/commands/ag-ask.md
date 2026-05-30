@@ -1,6 +1,7 @@
 ---
 description: Ask a question about the current project's codebase via the antigravity knowledge hub. / 通过 antigravity 知识库询问当前项目代码。
 allowed-tools: ["Bash"]
+category: core
 ---
 
 Run the Antigravity CLI for the current workspace:

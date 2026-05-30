@@ -1,5 +1,6 @@
 ---
 description: Map the entire repository before any work begins — project-aware deep scan
+category: scan
 ---
 
 Invoke `.agent/.agents/skills/01-deep-scan`.

@@ -1,6 +1,7 @@
 ---
 name: "source-command-web-aesthetics"
 description: "Audit and upgrade UI/UX to premium standards, powered by UI/UX Pro Max intelligence."
+category: ui
 ---
 
 # source-command-web-aesthetics

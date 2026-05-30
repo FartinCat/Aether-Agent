@@ -1,5 +1,6 @@
 ---
 description: "Analyzes git diff output and generates atomic, Conventional Commit commands for copy-paste execution."
+category: ops
 ---
 
 # Agent: Git Commit Author

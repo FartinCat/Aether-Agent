@@ -1,6 +1,7 @@
 ---
 name: "source-command-antibug"
 description: "Deep logical audit and root-cause bug fixing"
+category: review
 ---
 
 # source-command-antibug

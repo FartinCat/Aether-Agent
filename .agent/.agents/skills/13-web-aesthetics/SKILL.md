@@ -2,6 +2,7 @@
 name: web-aesthetics
 description: Ensures any generated vanilla CSS/JS web app features a premium, modern design. Enforces vibrant colors, glassmorphism, micro-animations, and high-quality typography over MVP placeholders.
 origin: Custom Ensemble
+category: ui
 ---
 
 # Premium Web Aesthetics

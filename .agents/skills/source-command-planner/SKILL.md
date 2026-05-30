@@ -1,6 +1,7 @@
 ---
 name: "source-command-planner"
 description: "Create a strategic implementation plan — single-agent version of /plan"
+category: plan
 ---
 
 # source-command-planner

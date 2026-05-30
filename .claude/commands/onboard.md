@@ -1,5 +1,6 @@
 ---
 description: First-contact project analysis — run this on any new project
+category: ops
 ---
 
 Invoke workflow `02-onboard.md`.

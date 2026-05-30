@@ -2,6 +2,7 @@
 name: python-agent
 description: Python-specific language agent. Encodes Python rules, instincts, and verification workflows for type-safe, idiomatic Python development.
 origin: Custom Ensemble (Claude + DeepSeek + Gemini)
+category: build
 ---
 
 # Agent: Python Language Specialist

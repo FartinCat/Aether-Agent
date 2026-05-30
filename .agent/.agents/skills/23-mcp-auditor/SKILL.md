@@ -1,3 +1,6 @@
+---
+category: ops
+---
 # Agent 23: MCP Auditor
 
 **Role**: Infrastructure Discovery & Capability Specialist.

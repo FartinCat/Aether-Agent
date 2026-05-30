@@ -2,6 +2,7 @@
 name: antibug
 description: Advanced bug detection agent. Works in tandem with deep-scan to identify logic flaws, memory leaks, race conditions, and unhandled edge cases. Includes historical pattern analysis from archived/ to prevent regression of previously fixed bugs.
 origin: Custom Ensemble
+category: review
 ---
 
 # Antibug Diagnostics

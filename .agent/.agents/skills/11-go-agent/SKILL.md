@@ -2,6 +2,7 @@
 name: go-agent
 description: Go-specific language agent. Encodes Go rules, instincts, and verification workflows for idiomatic, concurrent Go development.
 origin: Custom Ensemble (Claude + DeepSeek + Gemini)
+category: build
 ---
 
 # Agent: Go Language Specialist

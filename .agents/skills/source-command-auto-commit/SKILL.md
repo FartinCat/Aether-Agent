@@ -1,6 +1,7 @@
 ---
 name: "source-command-auto-commit"
 description: "Analyze all staged changes and create atomic Conventional Commits"
+category: ops
 ---
 
 # source-command-auto-commit

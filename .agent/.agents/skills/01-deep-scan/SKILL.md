@@ -2,6 +2,7 @@
 name: deep-scan
 description: Comprehensive situational awareness agent. Maps the project repository structure, dependencies, assets, and inter-module relationships. Never scans .agent/ infrastructure folders.
 origin: Custom Ensemble
+category: scan
 ---
 
 # Skill: Deep Scan

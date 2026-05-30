@@ -2,6 +2,7 @@
 name: latex-bib-manager
 description: Automatically manages LaTeX bibliographies, enforces strictly sequential citation numbering ([1], [2]...), cleans .bib entries, and stabilizes figure floats.
 origin: Custom Ensemble
+category: docs
 ---
 
 # LaTeX Bibliography & Float Management

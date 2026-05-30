@@ -2,6 +2,7 @@
 name: failure-predictor
 description: Pre-execution failure prediction agent. Runs before any code execution to predict likely bugs, rule violations, and fragile areas. Operates as the system's immune system.
 origin: Custom Ensemble (Claude + DeepSeek + ChatGPT convergence)
+category: ops
 ---
 
 # Agent: Failure Predictor

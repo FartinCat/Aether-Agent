@@ -2,6 +2,7 @@
 name: market-evaluator
 description: Evaluates the codebase and features against user requirements to estimate future market value and suggest commercial pricing tiers.
 origin: Custom Ensemble
+category: ops
 ---
 
 # Market Value Evaluator

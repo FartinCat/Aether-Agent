@@ -1,5 +1,6 @@
 ---
 description: Create a strategic implementation plan — single-agent version of /plan
+category: plan
 ---
 
 Invoke `.agent/.agents/skills/04-planner`.

@@ -1,6 +1,7 @@
 ---
 name: "source-command-spec"
 description: "Start spec-driven development — write a structured specification before writing any code"
+category: plan
 ---
 
 # source-command-spec

@@ -1,6 +1,7 @@
 ---
 description: Rebuild the antigravity project knowledge base after significant changes. / 在重要改动后重建 antigravity 项目知识库。
 allowed-tools: ["Bash"]
+category: core
 ---
 
 Run the Antigravity CLI for the current workspace.

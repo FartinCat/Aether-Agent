@@ -1,6 +1,7 @@
 ---
 name: "source-command-review"
 description: "Run a five-axis code review on current changes"
+category: review
 ---
 
 # source-command-review
