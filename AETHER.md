@@ -588,19 +588,31 @@ This is expected on the first run after migration. Run `/scanner` — the contex
 ## 16. Changelog
 
 ### [4.15.5] - 2026-05-30
-- Modified 1 workflow, 4 other
+- **Taxonomy Expansion**: Integrated `docs/maps/` and `docs/opencode-sessions/` directories into the empty directories matrix in `scaffold_project.py`.
+- **Session Log Automation**: Programmed the project scaffolder to automatically scan the root workspace, detect `session-ses_*.md` logs, and cleanly migrate them to `docs/opencode-sessions/` to prevent root pollution.
+- **Git Tracking Alignment**: Re-routed `.gitignore` ignore rule `/session-ses_*.md` to the root-level only, enabling full public version-control and publishing of all moved logs inside `docs/opencode-sessions/`.
 
 ### [4.15.4] - 2026-05-30
-- Modified 2 other
+- **Git Privacy Realignment**: Safely removed proprietary scan reports, audits, and research from Git caching, and configured `.gitignore` to keep them offline.
+- **Public Positioning**: Added tracking for the public commercial market evaluation report (`docs/market-evaluations/`) and excluded `docs/maps/` from ignores to preserve `SYSTEM_MAP.md`.
+
+### [4.15.3] - 2026-05-30
+- **Deep Diagnostics Integration**: Unified the diagnostic capabilities of `check_sync.py` directly inside `sync_registry.py` under Step 6 (Semantic & Reference Diagnostics), checking file paths, model structures, and version alignment across all active files.
+- **Diagnostics Verification**: Built a holistic GREEN/YELLOW health rating system for the OS.
+- **Cleanup**: Archived the standalone check script to `archived/check_sync.py`.
+
+### [4.15.2] - 2026-05-30
+- **Import Optimization**: Streamlined standard script exports and pruned dead imports across internal automation.
 
 ### [4.15.1] - 2026-05-30
-- Modified 1 other
+- **Internal Path Alignment**: Corrected import references and standardized path resolution mechanics across scripts.
 
 ### [4.15.0] - 2026-05-30
-- Modified 1 workflow, 1 command, 4 other
+- **Self-Maintenance Engine Sync**: Reconciled core registry files, workflows, and version badges after scaffolding script integration.
 
 ### [4.14.0] - 2026-05-30
-- Modified 1 workflow, 1 command, 3 other
+- **Scaffolding Automation**: Introduced the `scaffold_project.py` script and `/scaffold` command to initialize directory taxonomy and stubs cleanly with smart user data merging.
+- **Deployment Modernization**: Centered all instructions around a conflict-free global `npx create-aether-agent` installer, deprecating legacy manual rsync and Copy-Item commands.
 
 ### [4.13.0] - 2026-05-30
 - **Domain Category System**: Added `category:` frontmatter to all 100+ system files across 10 domains (core, scan, plan, build, test, review, security, ui, docs, ops)
@@ -826,9 +838,39 @@ When this .agent/ folder is copied to a new project, a fresh context will be ini
 **Action**: Updates and improvements.
 **State Change**: Version v4.13.0 synced.
 
+### 2026-05-30 — Automated Registry Sync — v4.14.0
+**Agent**: system
+**Action**: Scaffolding Automation & Deployment Alignment: Introduced scaffold_project.py script and /scaffold command, and streamlined instructions to use npx create-aether-agent.
+**State Change**: Version v4.14.0 synced.
+
+### 2026-05-30 — Automated Registry Sync — v4.15.0
+**Agent**: system
+**Action**: Self-Maintenance Engine Sync: Reconciled registry files, workflows, and version badges after scaffolding script integration.
+**State Change**: Version v4.15.0 synced.
+
+### 2026-05-30 — Automated Registry Sync — v4.15.1
+**Agent**: system
+**Action**: Internal Path Alignment: Corrected import references and standardized path resolution mechanics.
+**State Change**: Version v4.15.1 synced.
+
+### 2026-05-30 — Automated Registry Sync — v4.15.2
+**Agent**: system
+**Action**: Import Optimization: Streamlined standard script exports and pruned unused imports.
+**State Change**: Version v4.15.2 synced.
+
+### 2026-05-30 — Automated Registry Sync — v4.15.3
+**Agent**: system
+**Action**: Diagnostics Integration: Unified check_sync.py logic directly inside sync_registry.py as Step 6 (Semantic & Reference Diagnostics), calculating GREEN/YELLOW health.
+**State Change**: Version v4.15.3 synced.
+
+### 2026-05-30 — Automated Registry Sync — v4.15.4
+**Agent**: system
+**Action**: Git Privacy Realignment: Excluded proprietary plans, scans, audits, and research, while tracking docs/market-evaluations/.
+**State Change**: Version v4.15.4 synced.
+
 ### 2026-05-30 — Automated Registry Sync — v4.15.5
 **Agent**: system
-**Action**: Modified 1 workflow, 4 other
+**Action**: Taxonomy Expansion & Session Mover: Added docs/maps/ and docs/opencode-sessions/ to matrix and automated root session-ses_*.md migration.
 **State Change**: Version v4.15.5 synced.
 
 

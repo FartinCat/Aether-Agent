@@ -166,12 +166,12 @@
     "4.12.4": "Modified 19 workflows, 1 other",
     "4.12.5": "Modified 1 other",
     "4.13.0": "Updates and improvements.",
-    "4.14.0": "Modified 1 workflow, 1 command, 3 other",
-    "4.15.0": "Modified 1 workflow, 1 command, 4 other",
-    "4.15.1": "Modified 1 other",
-    "4.15.2": "Modified 1 other",
-    "4.15.3": "Modified 1 other",
-    "4.15.4": "Modified 2 other",
-    "4.15.5": "Modified 1 workflow, 4 other"
+    "4.14.0": "Scaffolding Automation & Deployment Alignment: Introduced scaffold_project.py script and /scaffold command, and streamlined instructions to use npx create-aether-agent.",
+    "4.15.0": "Self-Maintenance Engine Sync: Reconciled registry files, workflows, and version badges after scaffolding script integration.",
+    "4.15.1": "Internal Path Alignment: Corrected import references and standardized path resolution mechanics.",
+    "4.15.2": "Import Optimization: Streamlined standard script exports and pruned unused imports.",
+    "4.15.3": "Diagnostics Integration: Unified check_sync.py logic directly inside sync_registry.py as Step 6 (Semantic & Reference Diagnostics), calculating GREEN/YELLOW health.",
+    "4.15.4": "Git Privacy Realignment: Excluded proprietary plans, scans, audits, and research, while tracking docs/market-evaluations/.",
+    "4.15.5": "Taxonomy Expansion & Session Mover: Added docs/maps/ and docs/opencode-sessions/ to matrix and automated root session-ses_*.md migration."
   }
 }
