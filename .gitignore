@@ -4,6 +4,9 @@
 # `.agent/session-context.md` pointer stubs may be committed if your toolchain
 # requires that path — do not add it here.
 
+# OpenCode session dump files (ephemeral, not project artifacts)
+session-ses_*.md
+
 .gemini/
 
 # Reference repositories (cloned for synthesis, not distributed)
