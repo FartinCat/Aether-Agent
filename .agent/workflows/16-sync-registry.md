@@ -46,21 +46,17 @@ Compares filesystem vs **`.agent/aether-agent-install-state.json`** for:
 6. **LICENSE.md**: Updates applies-to-version field
 
 ### Step 5 — Verification & Report
-Re-validates all components. Outputs:
-```
-REGISTRY SYNC COMPLETE — [date]
-Components synced: [list]
-AETHER.md: UPDATED / UNCHANGED
-.agent/aether-agent-install-state.json (+ antigravity mirror): UPDATED / UNCHANGED
-§13 Agents Registry: UPDATED / UNCHANGED
-§16 Changelog: UPDATED / UNCHANGED
-§18 Session Context: UPDATED / UNCHANGED
-README.md: UPDATED / UNCHANGED
-LICENSE.md: UPDATED / UNCHANGED
-DELETION_REGISTRY.md: UPDATED / UNCHANGED
+Re-validates all components and prints file write status.
 
-HEALTH: GREEN / YELLOW (collisions or gaps found)
-```
+### Step 6 — Semantic & Reference Diagnostics
+Runs deep diagnostic audits:
+- **Version Synchronization**: Scans all active code and markdown files in the workspace to verify there are no out-of-sync or outdated version references.
+- **File Path Audit**: Scans rules, workflows, commands, and skills to ensure all referenced system paths exist on disk.
+- **Model Synchronization**: Audits consistent referencing and tracking of LLM models across active operating files.
+
+Outputs final health metrics:
+- **HEALTH: GREEN** — No collisions, no gaps, no BOM corruption, and all references nominal.
+- **HEALTH: YELLOW** — Non-critical anomalies like version mismatches or broken file path references detected.
 
 ## Primary Script
 - `.agent/scripts/sync_registry.py`

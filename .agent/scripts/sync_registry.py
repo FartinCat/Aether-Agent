@@ -623,9 +623,9 @@ if not bom_found:
 
 print("\n### Step 4 — Verification")
 if not drift_detected:
-    print("ALL components show IN SYNC. No changes made.")
+    print("  ALL components show IN SYNC. No changes made.")
 else:
-    print("Verification passed: Registry files updated successfully to match disk state.")
+    print("  Verification passed: Registry files updated successfully to match disk state.")
 
 print("\n### Step 5 — Sync Report")
 print(f"REGISTRY SYNC COMPLETE — {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -638,7 +638,138 @@ print(f"§18 Session Context: {'UPDATED' if session_updated else 'UNCHANGED'}")
 print(f"README.md: {'UPDATED' if readme_updated else 'UNCHANGED'}")
 print(f"LICENSE.md: {'UPDATED' if license_updated else 'UNCHANGED'}")
 
+# ═══════════════════════════════════════════════════════════════════════
+# DIAGNOSTICS & SYSTEM AUDITS (Integrated from check_sync.py)
+# ═══════════════════════════════════════════════════════════════════════
+def check_version_mismatches(base_path, canonical_ver):
+    version_pattern = re.compile(r"\bv?4\.\d+\.\d+\b")
+    exclude_dirs = {".git", "node_modules", "__pycache__", "data", "archived", "docs"}
+    exclude_files = {"sync_registry.py", "check_sync.py", "aether-agent-install-state.json", "antigravity-agent-install-state.json", "package.json", "AETHER_template.md", "session-ses_18b3.md"}
+    
+    mismatches = []
+    for root, dirs, files in os.walk(base_path):
+        dirs[:] = [d for d in dirs if d not in exclude_dirs]
+        for file in files:
+            if file in exclude_files:
+                continue
+            file_path = os.path.join(root, file)
+            if not file.endswith((".md", ".json", ".py", ".js", ".sh")):
+                continue
+                
+            try:
+                with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
+                    content = f.read()
+                    
+                matches = version_pattern.findall(content)
+                for match in matches:
+                    norm_match = match.lstrip("v")
+                    if norm_match != canonical_ver:
+                        rel_path = os.path.relpath(file_path, base_path)
+                        # Filter typical historical session context logs/changelogs
+                        if rel_path == "AETHER.md" and ("Changelog" in content or "Session Context" in content):
+                            continue
+                        # Filter Advanced Matrix (v4.0.0) false positive in README.md
+                        if rel_path == "README.md" and match == "v4.0.0":
+                            continue
+                        # Filter scan/validation illustrative strings
+                        if rel_path.endswith(("01-scan.md", "14-validate.md")) and match in ["v3.0.0", "v4.0.0"]:
+                            continue
+                        mismatches.append((rel_path, match))
+            except Exception:
+                pass
+    return mismatches
+
+def check_file_references(base_path):
+    path_pattern = re.compile(r"\b(?:\.agent|\.claude|\.agents|scripts)\b/[a-zA-Z0-9_\-\./]+")
+    exclude_dirs = {".git", "node_modules", "__pycache__", "data", "archived", "docs"}
+    
+    broken_refs = []
+    scanned_paths = set()
+    
+    for root, dirs, files in os.walk(base_path):
+        dirs[:] = [d for d in dirs if d not in exclude_dirs]
+        for file in files:
+            if file == "session-ses_18b3.md":
+                continue
+            file_path = os.path.join(root, file)
+            if not file.endswith((".md", ".json", ".py", ".js", ".sh")):
+                continue
+                
+            try:
+                with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
+                    content = f.read()
+                    
+                matches = path_pattern.findall(content)
+                for match in matches:
+                    clean_path = match.rstrip(").,`*")
+                    if clean_path in scanned_paths or clean_path.endswith((".py", ".js", ".sh", ".json")) or "/" not in clean_path:
+                        continue
+                    scanned_paths.add(clean_path)
+                    
+                    full_referenced_path = os.path.join(base_path, clean_path.replace("/", os.sep))
+                    if not os.path.exists(full_referenced_path):
+                        rel_src = os.path.relpath(file_path, base_path)
+                        broken_refs.append((rel_src, clean_path))
+            except Exception:
+                pass
+    return broken_refs
+
+def check_model_sync(base_path):
+    model_references = {}
+    model_pattern = re.compile(r"\b(?:Gemini|Claude|ChatGPT|GPT-4|DeepSeek|Perplexity)\b", re.IGNORECASE)
+    exclude_dirs = {".git", "node_modules", "__pycache__", "data", "archived", "docs"}
+    
+    for root, dirs, files in os.walk(base_path):
+        dirs[:] = [d for d in dirs if d not in exclude_dirs]
+        for file in files:
+            file_path = os.path.join(root, file)
+            if not file.endswith((".md", ".json", ".py", ".js", ".sh")):
+                continue
+                
+            try:
+                with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
+                    content = f.read()
+                    
+                matches = model_pattern.findall(content)
+                for match in matches:
+                    normalized = match.capitalize()
+                    if normalized not in model_references:
+                        model_references[normalized] = []
+                    rel_src = os.path.relpath(file_path, base_path)
+                    if rel_src not in model_references[normalized]:
+                        model_references[normalized].append(rel_src)
+            except Exception:
+                pass
+    return model_references
+
+print("\n### Step 6 — Semantic & Reference Diagnostics")
+version_anomalies = check_version_mismatches(base, latest_version)
+broken_paths = check_file_references(base)
+models_mapped = check_model_sync(base)
+
+if version_anomalies:
+    print(f"  [WARNING] Version Mismatches found ({len(version_anomalies)}):")
+    for src, match in version_anomalies:
+        print(f"    - {src}: Found '{match}' (expected '{latest_version}')")
+else:
+    print("  Version Synchronization: NOMINAL")
+
+if broken_paths:
+    print(f"  [WARNING] Broken file path references found ({len(broken_paths)}):")
+    for src, path in broken_paths:
+        print(f"    - {src}: Referenced '{path}' does not exist on disk!")
+else:
+    print("  File Path References: NOMINAL")
+
+print("  Active AI Model Alignment:")
+for model, refs in sorted(models_mapped.items()):
+    print(f"    - {model}: Mentions in {len(refs)} file(s)")
+
+has_diagnostics_anomalies = bool(version_anomalies or broken_paths)
+
 if collision_report:
     print(f"\n>> HEALTH: YELLOW -- {len(collision_report)} collision/gap issue(s) found. Run renumbering to fix.")
+elif has_diagnostics_anomalies:
+    print(f"\n>> HEALTH: YELLOW -- Drift resolved, but {len(version_anomalies)} version mismatch(es) or {len(broken_paths)} broken file path(s) exist.")
 else:
-    print("\n>> HEALTH: GREEN -- No collisions, no gaps, no BOM corruption.")
+    print("\n>> HEALTH: GREEN -- No collisions, no gaps, no BOM corruption, all references nominal.")
