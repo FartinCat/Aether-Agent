@@ -116,11 +116,16 @@ if phases["P2"] and phases["P3"]: mermaid += f"    {phases['P2'][-1].split('[')[
 if phases["P3"] and phases["P4"]: mermaid += f"    {phases['P3'][-1].split('[')[0]} --> {phases['P4'][0].split('[')[0]}\n"
 if phases["P4"] and phases["P5"]: mermaid += f"    {phases['P4'][-1].split('[')[0]} --> {phases['P5'][0].split('[')[0]}\n"
 
-mermaid += "\n    style " + " fill:#0d47a1,color:#fff\n    style ".join([p.split('[')[0] for p in phases['P1']]) + " fill:#0d47a1,color:#fff\n"
-mermaid += "    style " + " fill:#1565c0,color:#fff\n    style ".join([p.split('[')[0] for p in phases['P2']]) + " fill:#1565c0,color:#fff\n"
-mermaid += "    style " + " fill:#1976d2,color:#fff\n    style ".join([p.split('[')[0] for p in phases['P3']]) + " fill:#1976d2,color:#fff\n"
-mermaid += "    style " + " fill:#1e88e5,color:#fff\n    style ".join([p.split('[')[0] for p in phases['P4']]) + " fill:#1e88e5,color:#fff\n"
-mermaid += "    style " + " fill:#2196f3,color:#fff\n    style ".join([p.split('[')[0] for p in phases['P5']]) + " fill:#2196f3,color:#fff\n"
+if phases['P1']:
+    mermaid += "\n    style " + " fill:#0d47a1,color:#fff\n    style ".join([p.split('[')[0] for p in phases['P1']]) + " fill:#0d47a1,color:#fff\n"
+if phases['P2']:
+    mermaid += "    style " + " fill:#1565c0,color:#fff\n    style ".join([p.split('[')[0] for p in phases['P2']]) + " fill:#1565c0,color:#fff\n"
+if phases['P3']:
+    mermaid += "    style " + " fill:#1976d2,color:#fff\n    style ".join([p.split('[')[0] for p in phases['P3']]) + " fill:#1976d2,color:#fff\n"
+if phases['P4']:
+    mermaid += "    style " + " fill:#1e88e5,color:#fff\n    style ".join([p.split('[')[0] for p in phases['P4']]) + " fill:#1e88e5,color:#fff\n"
+if phases['P5']:
+    mermaid += "    style " + " fill:#2196f3,color:#fff\n    style ".join([p.split('[')[0] for p in phases['P5']]) + " fill:#2196f3,color:#fff\n"
 mermaid += "```"
 
 
