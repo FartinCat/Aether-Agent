@@ -7,6 +7,13 @@
 # OpenCode session dump files (ephemeral, not project artifacts)
 /session-ses_*.md
 
+# Core state files — contain session history, changelogs, and working-directory
+# context that must NEVER be published online. The installer generates clean
+# stubs for consumer projects; the source repo's versions are author-private.
+/AETHER.md
+/AGENTS.md
+/CLAUDE.md
+
 .gemini/
 
 # Reference repositories (cloned for synthesis, not distributed)
