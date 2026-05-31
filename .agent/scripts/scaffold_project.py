@@ -318,6 +318,36 @@ Once the core files are installed, run these two commands in order via your AI I
 1. **/01-scan** — Detects the environment and initializes project memory.
 2. **/03-scaffold** — Safely generates the standard project folders (assets, docs, archives) and stubs without conflicts.
 
+### 🆙 Upgrading Target Projects
+
+If you have already injected Aether Agent into a project directory (using `npx create-aether-agent .`) and want to upgrade it to the latest version, you can safely overlay the updated system core.
+
+#### Method 1 — Re-run NPX Installer (Recommended)
+Navigate to your project directory and re-run the creator script:
+```bash
+npx create-aether-agent .
+```
+This overlays the latest system core templates and scripts while preserving all of your custom project files and changes.
+
+#### Method 2 — Manual Copying (PowerShell)
+You can directly replicate the folders using PowerShell to copy them from your repository clone into your project target:
+```powershell
+Copy-Item -Recurse -Force "C:\\Dev\\aether-agent\\.agent" "C:\\Dev\\my-project\\"
+Copy-Item -Recurse -Force "C:\\Dev\\aether-agent\\.claude" "C:\\Dev\my-project\\"
+Copy-Item -Force "C:\\Dev\\aether-agent\\.mcp.json" "C:\\Dev\\my-project\\"
+```
+
+#### Method 3 — Unix Copying (Linux / macOS / WSL)
+If you are in a Bash-based project environment, run:
+```bash
+rsync -av --exclude='.git' "~/dev/aether-agent/.agent/" "~/dev/my-project/.agent/"
+rsync -av "~/dev/aether-agent/.claude/" "~/dev/my-project/.claude/"
+cp "~/dev/aether-agent/.mcp.json" "~/dev/my-project/"
+```
+
+> [!IMPORTANT]
+> **After upgrading**, open your project in your AI IDE chat and run **`/01-scan`** to align and reconcile the project's local session context registers!
+
 ### 🔗 Global Installation (Development — `npm link`)
 
 If you are a **contributor or developer** working on the Aether Agent source repository itself, you can register it globally on your machine so the `create-aether-agent` and `aether-agent` commands are available system-wide.
