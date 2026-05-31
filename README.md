@@ -1,14 +1,14 @@
 <div align="center">
 
 
-![Aether Agent Banner](assets/banner.png)
+![Aether Agent Banner](assets/images/banner.png)
 
 
-# 🌌 Aether Agent Ecosystem (v4.15.5)
+# 🌌 Aether Agent Ecosystem (v4.15.7)
 **The Ultimate Agentic Operating System for Professional Software Engineering**
 
 
-[![Version](https://img.shields.io/badge/version-4.15.5-blueviolet?style=for-the-badge)](AETHER.md)
+[![Version](https://img.shields.io/badge/version-4.15.7-blueviolet?style=for-the-badge)](AETHER.md)
 [![License](https://img.shields.io/badge/license-AAEL-blue?style=for-the-badge)](LICENSE.md)
 [![Status](https://img.shields.io/badge/status-Production_Ready-green?style=for-the-badge)](#)
 
@@ -153,6 +153,97 @@ Once the core files are installed, run these two commands in order via your AI I
 1. **/01-scan** — Detects the environment and initializes project memory.
 2. **/03-scaffold** — Safely generates the standard project folders (assets, docs, archives) and stubs without conflicts.
 
+### 🔗 Global Installation (Development — `npm link`)
+
+If you are a **contributor or developer** working on the Aether Agent source repository itself, you can register it globally on your machine so the `create-aether-agent` and `aether-agent` commands are available system-wide.
+
+#### Step 1 — Clone the repository
+
+Clone the Aether Agent repo to any folder on your machine:
+
+```bash
+# HTTPS
+git clone https://github.com/AetherAgent/aether-agent.git C:\Dev\aether-agent
+
+# SSH
+git clone git@github.com:AetherAgent/aether-agent.git C:\Dev\aether-agent
+```
+
+> **Linux / macOS:**
+> ```bash
+> git clone https://github.com/AetherAgent/aether-agent.git ~/dev/aether-agent
+> ```
+
+You can replace `C:\Dev\aether-agent` or `~/dev/aether-agent` with any directory of your choosing — there are no hardcoded path requirements.
+
+#### Step 2 — Link globally
+
+Navigate to the cloned repo and run `npm link`:
+
+```powershell
+cd C:\Dev\aether-agent
+npm link
+```
+
+```bash
+# Linux / macOS
+cd ~/dev/aether-agent
+npm link
+```
+
+This creates a **symlink** from your global npm directory to your local clone. After this, `create-aether-agent` and `aether-agent` are available as global commands.
+
+### 🔄 Upgrading After Changes
+
+Because `npm link` creates a **symlink** (not a copy), your global installation always points to the live source repo. This means:
+
+| Change Type | Re-link needed? |
+|---|---|
+| Edit any file under `.agent/`, `.claude/`, `.agents/`, `scripts/` | **No** — changes are live instantly |
+| Add or remove files in those directories | **No** — the symlink follows the directory |
+| Change `package.json` fields (`version`, `bin`, `main`, `files`) | **Yes** — run `npm link` again |
+| Move the repo to a different folder | **Yes** — run `npm link` from the new location |
+| Reinstall Node.js or change global npm prefix | **Yes** — the old symlink is invalidated |
+
+**When in doubt**, just re-run from the repo root:
+
+```powershell
+cd C:\Dev\aether-agent
+npm link
+```
+
+### 📋 Version Alignment
+
+The system tracks its version in three places. After significant changes, ensure they match:
+
+| Location | Where |
+|---|---|
+| `AETHER.md` §1 + §14 | Title line + Metadata section |
+| `.agent/aether-agent-install-state.json` | `"version"` field |
+| `package.json` | `"version"` field |
+
+The `/16-sync-registry` workflow automatically aligns `AETHER.md` and `install-state.json`. The `package.json` version must be updated manually (or by the agent) before re-linking:
+
+```powershell
+# After running /sync-registry to bump internal version:
+cd C:\Dev\aether-agent
+npm link
+```
+
+### ✅ Verification
+
+Confirm the global install is active and at the expected version:
+
+```powershell
+npm list -g aether-agent
+```
+
+Expected output:
+```
+C:\Users\you\AppData\Roaming\npm
+`-- aether-agent@4.15.7 -> .\C:\Dev\aether-agent
+```
+
 ## 🤖 The Agent Arsenal (Specialists)
 
 Aether Agent features **23 Specialist Agents**, each with a dedicated YAML persona.
@@ -244,6 +335,23 @@ Implicit reasoning modules that govern every agent's internal logic.
 - **`22-registry-synchronizer`**: Run it with: ```bash python .agent/scripts/sync_registry.py python .agent/scripts/sync_registry.py --no-bump python .agent/scripts/sync_registry.py --no-bump --regen-section13   # rebuild §13 from disk only ```
 
 ---
+
+
+## 🧠 Behavioral Instincts
+
+Core cognitive guards that execute on every turn to prevent common developer anti-patterns.
+
+- **`01-minimal-footprint`**: Make the smallest change that solves the problem.
+- **`02-verification-before-confidence`**: Never assert without verifying.
+- **`03-user-intent-preservation`**: Serve what the user MEANS, not just what they say.
+- **`04-graceful-degradation`**: Keep working when one part fails. Report clearly. Never hide failures.
+- **`05-commercial-quality-standard`**: Every output should be production-ready.
+- **`06-asset-pruning`**: Actively verify the utility of assets, documents, and folders; propose deletion for anything that is unreferenced or obsolete to maintain a minimal, clean workspace.
+- **`07-privacy-sanitization`**: Public-facing documentation must never contain real user paths, machine names, or directory structures that reveal the author's personal environment.
+
+---
+
+
 
 
 ## 🧮 Advanced Operations Matrix
