@@ -159,7 +159,18 @@ def scaffold():
                 print(f"Moved session dump: {file} -> docs/opencode-sessions/")
             except Exception as e:
                 print(f"[WARNING] Could not move session dump {file}: {e}")
-
+    # ─── 2b. Move Stray Assets in Assets Root to assets/images/ ──────────
+    images_dir = os.path.join(assets_root, "images")
+    ensure_directory(images_dir)
+    for file in os.listdir(assets_root):
+        src_file = os.path.join(assets_root, file)
+        if os.path.isfile(src_file) and file.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg')):
+            dest_file = os.path.join(images_dir, file)
+            try:
+                shutil.move(src_file, dest_file)
+                print(f"Moved stray asset: {file} -> assets/images/")
+            except Exception as e:
+                print(f"[WARNING] Could not move asset {file}: {e}")
     # ─── 3. Write Stubs if Missing ─────────────────────────────────────
     agents_stub = os.path.join(PROJECT_ROOT, "AGENTS.md")
     if not os.path.exists(agents_stub):
@@ -306,6 +317,97 @@ This will safely install the core `.agent/` and `.claude/` system folders into y
 Once the core files are installed, run these two commands in order via your AI IDE chat (Cursor/Windsurf/Claude Code):
 1. **/01-scan** — Detects the environment and initializes project memory.
 2. **/03-scaffold** — Safely generates the standard project folders (assets, docs, archives) and stubs without conflicts.
+
+### 🔗 Global Installation (Development — `npm link`)
+
+If you are a **contributor or developer** working on the Aether Agent source repository itself, you can register it globally on your machine so the `create-aether-agent` and `aether-agent` commands are available system-wide.
+
+#### Step 1 — Clone the repository
+
+Clone the Aether Agent repo to any folder on your machine:
+
+```bash
+# HTTPS
+git clone https://github.com/AetherAgent/aether-agent.git C:\\Dev\\aether-agent
+
+# SSH
+git clone git@github.com:AetherAgent/aether-agent.git C:\\Dev\\aether-agent
+```
+
+> **Linux / macOS:**
+> ```bash
+> git clone https://github.com/AetherAgent/aether-agent.git ~/dev/aether-agent
+> ```
+
+You can replace `C:\\Dev\\aether-agent` or `~/dev/aether-agent` with any directory of your choosing — there are no hardcoded path requirements.
+
+#### Step 2 — Link globally
+
+Navigate to the cloned repo and run `npm link`:
+
+```powershell
+cd C:\\Dev\\aether-agent
+npm link
+```
+
+```bash
+# Linux / macOS
+cd ~/dev/aether-agent
+npm link
+```
+
+This creates a **symlink** from your global npm directory to your local clone. After this, `create-aether-agent` and `aether-agent` are available as global commands.
+
+### 🔄 Upgrading After Changes
+
+Because `npm link` creates a **symlink** (not a copy), your global installation always points to the live source repo. This means:
+
+| Change Type | Re-link needed? |
+|---|---|
+| Edit any file under `.agent/`, `.claude/`, `.agents/`, `scripts/` | **No** — changes are live instantly |
+| Add or remove files in those directories | **No** — the symlink follows the directory |
+| Change `package.json` fields (`version`, `bin`, `main`, `files`) | **Yes** — run `npm link` again |
+| Move the repo to a different folder | **Yes** — run `npm link` from the new location |
+| Reinstall Node.js or change global npm prefix | **Yes** — the old symlink is invalidated |
+
+**When in doubt**, just re-run from the repo root:
+
+```powershell
+cd C:\\Dev\\aether-agent
+npm link
+```
+
+### 📋 Version Alignment
+
+The system tracks its version in three places. After significant changes, ensure they match:
+
+| Location | Where |
+|---|---|
+| `AETHER.md` §1 + §14 | Title line + Metadata section |
+| `.agent/aether-agent-install-state.json` | `"version"` field |
+| `package.json` | `"version"` field |
+
+The `/16-sync-registry` workflow automatically aligns `AETHER.md` and `install-state.json`. The `package.json` version must be updated manually (or by the agent) before re-linking:
+
+```powershell
+# After running /sync-registry to bump internal version:
+cd C:\\Dev\\aether-agent
+npm link
+```
+
+### ✅ Verification
+
+Confirm the global install is active and at the expected version:
+
+```powershell
+npm list -g aether-agent
+```
+
+Expected output:
+```
+C:\\Users\\you\\AppData\\Roaming\\npm
+`-- aether-agent@4.15.7 -> .\\C:\\Dev\\aether-agent
+```
 """
 
     if os.path.exists(readme_file):
