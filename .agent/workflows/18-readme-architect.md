@@ -16,14 +16,16 @@ category: docs
 2. **Verification**: Run `git diff README.md` to verify the tables and flowchart updated successfully.
 
 The Python engine handles:
-- **Architecture Scan**: Parses `.agent/` and `.claude/` directories to identify all active rules, skills, workflows, and commands.
-- **Deep Extraction**: Extracts actual YAML `description` and `trigger` attributes from `SKILL.md` and frontmatter.
+- **Architecture Scan**: Parses `.agent/` and `.claude/` directories to identify all active rules, skills, workflows, commands, and instincts.
+- **Deep Extraction**: Extracts actual YAML `description` and `trigger` attributes from `SKILL.md`, `instincts/*.md` (e.g. `## The Pattern`), and frontmatter.
 - **Flowchart Generation**: Rebuilds the Mermaid flowchart dynamically based on workflow numbers.
-- **README Injection**: Injects updated tables and graphs into `README.md`.
+- **README Injection**: Injects updated Specialist Tables, Workflows, Foundational Skills, and Behavioral Instincts into `README.md`.
+- **Privacy Sanitization**: Scans the final output for personal filesystem paths (home dirs, usernames, workspace roots) and replaces them with generic examples before writing. Enforces Instinct 07.
 
 ## Execution Trigger
-- Triggered automatically during `/20-release-project` OR manually via `/22-readme-architect`.
-- **Must execute BEFORE** `/23-sync-registry` so that the updated README correctly receives the finalized version badge during the sync.
+- Triggered automatically during `/15-release` OR manually via `/18-readme-architect`.
+- **Must execute BEFORE** `/16-sync-registry` so that the updated README correctly receives the finalized version badge during the sync.
 
 ## Primary Agent
 - `16-readme-architect`
+

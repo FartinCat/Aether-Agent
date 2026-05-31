@@ -159,6 +159,36 @@ for f in sorted(os.listdir(s_dir)):
 
 skills_text = "\n".join(skills)
 
+# 3b. Behavioral Instincts
+instincts = []
+i_dir = os.path.join(base, ".agent", "instincts")
+for f in sorted(os.listdir(i_dir)):
+    if f.endswith('.md') and '-' in f:
+        num, name = f.replace('.md', '').split('-', 1)
+        
+        # Read file
+        with open(os.path.join(i_dir, f), 'r', encoding='utf-8') as file:
+            content = file.read()
+        
+        # Extract yaml description first
+        fm = get_frontmatter(os.path.join(i_dir, f))
+        if fm.get('description'):
+            desc = fm['description']
+        else:
+            # Fallback: Extract from '## The Pattern' section
+            m_pat = re.search(r'## The Pattern\s*\n+([^\n#]+)', content)
+            if m_pat:
+                desc = m_pat.group(1).strip()
+            else:
+                desc = "Core behavioral instinct."
+                
+        # Clean markdown links/bolds
+        desc = re.sub(r'\[(.*?)\]\(.*?\)', r'\1', desc)
+        desc = desc.replace('**', '').replace('\n', ' ')
+        instincts.append(f"- **`{f.replace('.md', '')}`**: {desc}")
+
+instincts_text = "\n".join(instincts)
+
 # Replace in README.md
 with open(os.path.join(base, 'README.md'), 'r', encoding='utf-8') as f:
     readme = f.read()
@@ -195,5 +225,68 @@ readme = re.sub(
     flags=re.DOTALL
 )
 
+# Replace Instincts List
+readme = re.sub(
+    r'(- \*\*`01-minimal-footprint`\*\*.*?)(?=\n\n---)',
+    instincts_text.strip(),
+    readme,
+    flags=re.DOTALL
+)
+
+# 4. Privacy Sanitization — strip real user paths before writing
+def sanitize_paths(text):
+    """Replace personal filesystem paths with generic examples.
+    Fires Instinct 07 (Privacy Sanitization) at the script level."""
+    original = text
+
+    # In markdown text, Windows paths use literal backslashes: D:\Git_Work\...
+    # In Python regex raw strings, \\\\ matches a literal backslash
+    # But since we read markdown as plain text, a single \ in the file is a single char
+
+    # Pattern 1: Windows paths with Git_Work (e.g. D:\Git_Work\Aether Agent\...)
+    text = re.sub(
+        r'[A-Z]:[/\\]Git_Work[/\\][^\s"\'`]*',
+        r'C:\\Dev\\aether-agent',
+        text
+    )
+    # Pattern 2: Windows user home paths (e.g. C:\Users\JohnDoe\...)
+    # Exclude generic placeholder "you"
+    text = re.sub(
+        r'[A-Z]:[/\\]Users[/\\](?!you[/\\])[A-Za-z0-9_.]+[/\\][^\s"\'`]*',
+        r'C:\\Dev\\aether-agent',
+        text
+    )
+    # Pattern 3: WSL paths (e.g. /mnt/d/Git_Work/...)
+    text = re.sub(
+        r'/mnt/[a-z]/[Gg]it_[Ww]ork/[^\s"\'`]*',
+        '/home/user/aether-agent',
+        text
+    )
+    # Pattern 4: Unix home paths (e.g. /home/john/..., /Users/john/...)
+    # Exclude generic placeholder "user"
+    text = re.sub(
+        r'/home/(?!user[/\s])[A-Za-z0-9_.-]+/[^\s"\'`]*',
+        '/home/user/aether-agent',
+        text
+    )
+    text = re.sub(
+        r'/Users/[A-Za-z0-9_.-]+/[^\s"\'`]*',
+        '/home/user/aether-agent',
+        text
+    )
+
+    if text != original:
+        # Count lines that changed
+        orig_lines = original.splitlines()
+        new_lines = text.splitlines()
+        changed = sum(1 for a, b in zip(orig_lines, new_lines) if a != b)
+        print(f"[PRIVACY] Sanitized personal paths in README.md ({changed} lines changed)")
+
+    return text
+
+readme = sanitize_paths(readme)
+
 with open(os.path.join(base, 'README.md'), 'w', encoding='utf-8') as f:
     f.write(readme)
+
+print("[OK] README.md updated successfully.")
