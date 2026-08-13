@@ -1,0 +1,7 @@
+interface:
+  display_name: "Ask Agent (with ELIA5 Layman Mode)"
+  short_description: "Surgical codebase inquiry, semantic locator & ELIA5 layman explanations"
+  brand_color: "#3B82F6"
+  default_prompt: "Ask any question about the codebase, or use '/ask ELIA5 <topic>' for simple real-world analogies without jargon."
+policy:
+  allow_implicit_invocation: true
