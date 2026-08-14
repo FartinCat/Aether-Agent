@@ -1,0 +1,7 @@
+interface:
+  display_name: "Validator"
+  short_description: "Pre-execution evidence & contradiction validator"
+  brand_color: "#10B981"
+  default_prompt: "Validate the evidence and assumptions for the upcoming task."
+policy:
+  allow_implicit_invocation: true
