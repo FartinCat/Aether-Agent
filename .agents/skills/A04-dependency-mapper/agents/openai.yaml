@@ -1,0 +1,7 @@
+interface:
+  display_name: "Dependency Mapper"
+  short_description: "Blast-radius & import graph analyzer"
+  brand_color: "#8B5CF6"
+  default_prompt: "Which file are you planning to modify or trace dependencies for?"
+policy:
+  allow_implicit_invocation: true
