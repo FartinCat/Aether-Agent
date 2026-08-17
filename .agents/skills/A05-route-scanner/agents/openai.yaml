@@ -1,0 +1,7 @@
+interface:
+  display_name: "Route Scanner"
+  short_description: "Web page & API route discovery scanner"
+  brand_color: "#EC4899"
+  default_prompt: "Scan this repository for all web pages, routes, and API endpoints."
+policy:
+  allow_implicit_invocation: true
