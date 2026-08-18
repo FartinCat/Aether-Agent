@@ -1,0 +1,7 @@
+interface:
+  display_name: "Schema Scanner"
+  short_description: "Database model & schema extractor"
+  brand_color: "#14B8A6"
+  default_prompt: "Extract and map all database models, tables, and schemas in this project."
+policy:
+  allow_implicit_invocation: true
