@@ -1,0 +1,4 @@
+interface:
+  display_name: "B01 Grill Me (Architectural Interrogator)"
+  short_description: "Deep pre-planning user interview. Resolves architecture decisions, edge cases, and scope with technical (/ask) and layman (/ask ELIA5) support."
+  default_prompt: "Interview me on my proposed feature or task. Walk through the 4-axis decision tree, provide recommended answers, and support /ask (technical) or /ask ELIA5 (layman) for option explanations."
