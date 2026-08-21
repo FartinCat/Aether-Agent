@@ -1,0 +1,4 @@
+interface:
+  display_name: "B02 Task Planner (Decomposition & Roadmap)"
+  short_description: "Strategic task decomposer. Breaks complex goals into atomic, low-cognitive-load milestones (<=2 files per task) with plan linter."
+  default_prompt: "Create an atomic, phased implementation plan for my task using the Low Cognitive Load Protocol (<=2 files per task) and verifiable Definitions of Done."
