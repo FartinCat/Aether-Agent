@@ -186,6 +186,29 @@ Skills in this category turn high-level feature requests and Category A discover
 
 ---
 
+#### `B02-task-planner` — Strategic Task Decomposer & Roadmap Architect
+* **Status**: ✅ Approved & Tested
+* **Location**: `.agents/skills/B02-task-planner/`
+* **Aliases**: `task-planner`, `decomposer`, `roadmap-architect`, `planner`
+* **Role**: Strategic task decomposer. Converts high-level requirements and `B01-grill-me` decision records into phased, atomic roadmaps. Enforces the **Low Cognitive Load Protocol** (≤2 files touched per task, <50 lines changed per step) to eliminate AI hallucinations and context exhaustion. Includes a self-contained static plan linter.
+* **Has Scripts**: **Yes** (`scripts/plan_linter.py` — zero external dependencies, <20ms execution).
+* **Self-Contained File Structure**:
+  ```
+  .agents/skills/B02-task-planner/
+  ├── SKILL.md                  # Decomposition protocol & cognitive load rules
+  ├── scripts/
+  │   └── plan_linter.py        # Static plan linter & cognitive load validator
+  └── agents/
+      └── openai.yaml           # Antigravity/OpenAI UI display metadata
+  ```
+* **Input**: `DECISION_RECORD` from `B01-grill-me` + discovery anchors (`A01`–`A06`).
+* **Output Modes**:
+  1. *Standalone*: Structured Markdown Implementation Plan (`PLAN.md`) with explicit phases, tasks, and Definitions of Done.
+  2. *Ensemble*: Machine-readable `<!-- CONTEXT_ANCHOR:TASK_PLAN -->` block for `B03-failure-predictor` and Category C.
+* **Workflow Connections**: Sits directly between `B01-grill-me` and `B03-failure-predictor`. Ingests blast-radius data from `A04-dependency-mapper` to guarantee dependency-ordered updates.
+
+---
+
 ## 4. Self-Contained Skill Packaging Standard
 
 Every skill in `.agents/skills/` must strictly adhere to the **Independence Law**:
