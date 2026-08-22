@@ -29,7 +29,8 @@ Anyone can copy `B01-grill-me/` directly into any `.agents/skills/` directory to
 ## 2. Core Operating Principles
 
 1. **The Zero-Redundancy Law**:
-   - **Never ask what code already tells you**. Category A ([`A01-deep-scan`](file:///d:/Git_Work/Aether%20Agent/.agents/skills/A01-deep-scan), [`A04-dependency-mapper`](file:///d:/Git_Work/Aether%20Agent/.agents/skills/A04-dependency-mapper), [`A05-route-scanner`](file:///d:/Git_Work/Aether%20Agent/.agents/skills/A05-route-scanner), [`A06-schema-scanner`](file:///d:/Git_Work/Aether%20Agent/.agents/skills/A06-schema-scanner)) already reveals the language, framework, database models, and routes.
+   - **Never ask what code already tells you**. If Category A discovery skills (`A01-deep-scan`, `A04-dependency-mapper`, `A05-route-scanner`, `A06-schema-scanner`) or their context anchors (`<!-- CONTEXT_ANCHOR:... -->`) are present, consume them directly.
+   - **Standalone Fallback**: If running without discovery skills installed, inspect root manifests (`package.json`, `pyproject.toml`, `Cargo.toml`) autonomously via standard tools before asking questions.
    - Only interview the user about **human intent, business rules, design choices, error tolerance, and scope boundaries**.
 
 2. **One Branch at a Time**:
@@ -37,7 +38,7 @@ Anyone can copy `B01-grill-me/` directly into any `.agents/skills/` directory to
 
 3. **Always Provide a Recommended Option**:
    - Formulate 2–3 concrete, technically distinct options plus a write-in choice.
-   - Prefix the strongest option with **`(Recommended)`**, citing existing patterns in the codebase (e.g. *"Recommended because your auth routes in `A05` already use JWT bearer tokens"*).
+   - Prefix the strongest option with **`(Recommended)`**, citing existing patterns in the codebase (e.g. *"Recommended because your existing auth routes already use JWT bearer tokens"*).
 
 4. **Dual Clarification Safety Hatch (`/ask` vs `/ask ELIA5`)**:
    - Technical options can sometimes need deeper architectural elaboration, or conversely, be too intimidating for non-computer-science users.
@@ -121,7 +122,7 @@ When a user submits a query into the custom write-in box instead of choosing an 
 * **Target Audience**: Engineers and technical leads evaluating performance and architecture.
 * **Response Content**:
   - **Option Trade-Offs**: Concurrency, memory footprint, query complexity, latency, and failure tolerance.
-  - **Codebase Compatibility**: Cites existing dependencies and patterns found in Category A scans (`A04`, `A05`, `A06`).
+  - **Codebase Compatibility**: Cites existing dependencies and patterns found in the repository (or upstream discovery anchors if available).
   - **Technical Recommendation**: Clear engineering verdict.
 * **Post-Action**: Re-present the original question modal with the options so the user can make their informed selection.
 
