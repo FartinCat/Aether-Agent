@@ -1,0 +1,4 @@
+interface:
+  display_name: "B02 Planner"
+  short_description: "Strategic architectural planner generating phased plans with explicit variations and trade-off matrices."
+  default_prompt: "Formulate a strategic plan for this feature with Lean, Modular, and Enterprise variations."
