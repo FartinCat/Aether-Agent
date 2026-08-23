@@ -1,0 +1,4 @@
+interface:
+  display_name: "B03 Spec Architect"
+  short_description: "Formal technical specification & contract engine establishing schemas, state machines, and error taxonomies."
+  default_prompt: "Generate a binding technical specification (SPEC.md) covering the 5 core specification pillars."
