@@ -91,7 +91,7 @@ Follow the appropriate concise output structure:
 ```markdown
 ### 💡 [Direct Answer / Summary in 1-2 Sentences]
 
-**Location**: [`functionName` in path/to/file.ts#L45-L82](file:///d:/path/to/file.ts#L45-L82)
+**Location**: [`functionName` in path/to/file.ts#L45-L82](file:///path/to/file.ts#L45-L82)
 
 #### How It Works:
 - **Input / Trigger**: [What calls this or what inputs it expects]
