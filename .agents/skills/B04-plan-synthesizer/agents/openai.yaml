@@ -1,0 +1,4 @@
+interface:
+  display_name: "B04 Plan Synthesizer"
+  short_description: "Multi-plan & user-idea synthesis engine harmonizing competing proposals and ideas into a conflict-free golden plan."
+  default_prompt: "Reconcile these multiple proposals and ideas into a single unified Golden Plan."
