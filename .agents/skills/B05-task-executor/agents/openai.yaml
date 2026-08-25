@@ -1,0 +1,4 @@
+interface:
+  display_name: "B05 Task Executor"
+  short_description: "Atomic task decomposer & execution engine enforcing <=2 files/task with DoD verification."
+  default_prompt: "Decompose this synthesized plan into an atomic execution roadmap with <=2 files per task and verification gates."
