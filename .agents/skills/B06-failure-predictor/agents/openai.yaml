@@ -1,0 +1,4 @@
+interface:
+  display_name: "B06 Failure Predictor"
+  short_description: "Pre-execution failure predictor & risk gate assigning a 5-level risk score before implementation."
+  default_prompt: "Audit this proposed plan or file change for failure modes, anti-patterns, and blast-radius risks."
