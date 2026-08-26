@@ -161,15 +161,15 @@ All core Scan & Discovery capabilities are now fully operational, tested, and 10
 
 ## 3. Category B: Plan & Specification Skills
 
-Skills in this category turn high-level feature requests and Category A discovery anchors into **unambiguous architectural contracts, locked decisions, and safe atomic task breakdowns** before any code is generated.
+Skills in this category turn high-level feature requests and Category A discovery anchors into **unambiguous architectural contracts, locked decisions, multi-variation plans, synthesized roadmaps, and safe atomic task executions** before any code is generated.
 
-### Approved & Operational Skills
+### Approved & Operational Skills (6-Skill Pipeline)
 
 #### `B01-grill-me` — Architectural & Requirements Interrogator
-* **Status**: ✅ Approved & Tested
+* **Status**: ✅ Approved & Operational
 * **Location**: `.agents/skills/B01-grill-me/`
 * **Aliases**: `grill-me`, `requirements-grill`, `decision-interviewer`, `elia5-interrogator`
-* **Role**: Deep pre-planning interrogator. Systematically walks down a 4-Axis Decision Tree (UX/Behavior, Data Model, Edge Cases/Failures, Scope Fences) using interactive multiple-choice options with `(Recommended)` answers based on codebase findings. Integrates a **Dual Clarification Safety Hatch**: users can type `/ask` in the write-in box for deep technical trade-off breakdowns, or `/ask ELIA5` for simple, zero-jargon real-world analogies before making decisions.
+* **Role**: Deep pre-planning interrogator. Systematically traverses a 4-Axis Decision Tree (UX/Behavior, Data Model, Edge Cases/Failures, Scope Fences) using interactive multiple-choice options with `(Recommended)` choices. Integrates a **Dual Clarification Safety Hatch**: users can type `/ask` in the write-in box for technical trade-off breakdowns, or `/ask ELIA5` for zero-jargon real-world analogies before deciding.
 * **Has Scripts**: **No** (Direct cognitive tool calls: interactive multiple choice + decision synthesis).
 * **Self-Contained File Structure**:
   ```
@@ -181,31 +181,124 @@ Skills in this category turn high-level feature requests and Category A discover
 * **Input**: User feature prompt + Category A discovery anchors (`A01`–`A06`).
 * **Output Modes**:
   1. *Interactive*: Progressive multiple-choice queries with ELIA5 layman explanations on demand.
-  2. *Ensemble*: Machine-readable `<!-- CONTEXT_ANCHOR:DECISION_RECORD -->` block for `B02-task-planner`.
-* **Workflow Connections**: Positioned as the front-gate of Category B, bridging Discovery and Planning. Feeds locked decisions directly into `B02-task-planner`.
+  2. *Ensemble*: Machine-readable `<!-- CONTEXT_ANCHOR:DECISION_RECORD -->` block for `B02-planner`.
+* **Workflow Connections**: Positioned as the front-gate of Category B, bridging Discovery and Planning. Feeds locked decisions directly into `B02-planner`.
 
 ---
 
-#### `B02-task-planner` — Strategic Task Decomposer & Roadmap Architect
-* **Status**: ✅ Approved & Tested
-* **Location**: `.agents/skills/B02-task-planner/`
-* **Aliases**: `task-planner`, `decomposer`, `roadmap-architect`, `planner`
-* **Role**: Strategic task decomposer. Converts high-level requirements and `B01-grill-me` decision records into phased, atomic roadmaps. Enforces the **Low Cognitive Load Protocol** (≤2 files touched per task, <50 lines changed per step) to eliminate AI hallucinations and context exhaustion. Includes a self-contained static plan linter.
-* **Has Scripts**: **Yes** (`scripts/plan_linter.py` — zero external dependencies, <20ms execution).
+#### `B02-planner` — Strategic Architectural Planner with Variations
+* **Status**: ✅ Approved & Operational
+* **Location**: `.agents/skills/B02-planner/`
+* **Aliases**: `planner`, `strategy-planner`, `architectural-planner`, `plan-variants`
+* **Role**: Strategic architectural planner. Enforces the **Multi-Variation Mandate**: formulates 2–3 distinct architectural approaches (Variation Alpha: Lean/Minimalist, Variation Beta: Idiomatic/Modular, Variation Gamma: Enterprise/Scalable) and evaluates them using objective trade-off scorecards (Velocity, Maintainability, Risk, Blast Radius).
+* **Has Scripts**: **Yes** (`scripts/plan_comparator.py` — zero external dependencies, <20ms execution).
 * **Self-Contained File Structure**:
   ```
-  .agents/skills/B02-task-planner/
-  ├── SKILL.md                  # Decomposition protocol & cognitive load rules
+  .agents/skills/B02-planner/
+  ├── SKILL.md                  # Planning protocol & variation comparison standard
   ├── scripts/
-  │   └── plan_linter.py        # Static plan linter & cognitive load validator
+  │   └── plan_comparator.py   # Static variation parser & trade-off scorecard generator
   └── agents/
       └── openai.yaml           # Antigravity/OpenAI UI display metadata
   ```
-* **Input**: `DECISION_RECORD` from `B01-grill-me` + discovery anchors (`A01`–`A06`).
+* **Input**: `DECISION_RECORD` from `B01-grill-me` + discovery anchors.
 * **Output Modes**:
-  1. *Standalone*: Structured Markdown Implementation Plan (`PLAN.md`) with explicit phases, tasks, and Definitions of Done.
-  2. *Ensemble*: Machine-readable `<!-- CONTEXT_ANCHOR:TASK_PLAN -->` block for `B03-failure-predictor` and Category C.
-* **Workflow Connections**: Sits directly between `B01-grill-me` and `B03-failure-predictor`. Ingests blast-radius data from `A04-dependency-mapper` to guarantee dependency-ordered updates.
+  1. *Standalone*: Multi-variant architectural proposal with trade-off comparison matrix.
+  2. *Ensemble*: Machine-readable `<!-- CONTEXT_ANCHOR:PLAN_VARIATIONS -->` block for `B03-spec-architect`.
+* **Workflow Connections**: Bridges requirements interrogation into concrete architectural variations. Hands off to `B03-spec-architect`.
+
+---
+
+#### `B03-spec-architect` — Formal Technical Specification & Contract Engine
+* **Status**: ✅ Approved & Operational
+* **Location**: `.agents/skills/B03-spec-architect/`
+* **Aliases**: `spec-architect`, `spec-generator`, `contract-architect`, `specification`
+* **Role**: Formal contract engine. Solidifies chosen strategies into binding technical specifications (`SPEC.md`). Enforces the **5 Specification Pillars**: Acceptance Criteria (Given/When/Then), Data Models & Schemas, API & Interface Signatures, State Machine & Lifecycle Transitions, and Error Taxonomy & Recovery.
+* **Has Scripts**: **Yes** (`scripts/validate_spec.py` — zero external dependencies, <30ms execution).
+* **Self-Contained File Structure**:
+  ```
+  .agents/skills/B03-spec-architect/
+  ├── SKILL.md                  # Specification protocol & 5-pillar contract standard
+  ├── scripts/
+  │   └── validate_spec.py     # Static specification auditor & portability validator
+  └── agents/
+      └── openai.yaml           # Antigravity/OpenAI UI display metadata
+  ```
+* **Input**: Selected variation from `B02-planner` + `DECISION_RECORD` from `B01-grill-me`.
+* **Output Modes**:
+  1. *Standalone*: Formal `SPEC.md` document with schema definitions, state machines, and error tables.
+  2. *Ensemble*: Machine-readable `<!-- CONTEXT_ANCHOR:SYSTEM_SPEC -->` block for `B04-plan-synthesizer` and `B05-task-executor`.
+* **Workflow Connections**: Translates architectural intent into unambiguous technical contracts. Feeds into `B04-plan-synthesizer`.
+
+---
+
+#### `B04-plan-synthesizer` — Multi-Plan & User-Idea Synthesis Engine
+* **Status**: ✅ Approved & Operational
+* **Location**: `.agents/skills/B04-plan-synthesizer/`
+* **Aliases**: `plan-synthesizer`, `idea-synthesizer`, `strategy-synthesizer`, `synthesizer`
+* **Role**: Multi-input reconciliation engine. Synthesizes competing agent proposals, conflicting architectural strategies, and diverse brainstorming ideas submitted by the user. Identifies baseline consensus, isolates clashes, and reconciles trade-offs into a single, unified, conflict-free Golden Plan.
+* **Has Scripts**: **Yes** (`scripts/synthesize_plans.py` — zero external dependencies, <30ms execution).
+* **Self-Contained File Structure**:
+  ```
+  .agents/skills/B04-plan-synthesizer/
+  ├── SKILL.md                  # Synthesis protocol & multi-intake reconciliation rules
+  ├── scripts/
+  │   └── synthesize_plans.py  # Static conflict detector & consensus synthesizer
+  └── agents/
+      └── openai.yaml           # Antigravity/OpenAI UI display metadata
+  ```
+* **Input**: Multiple agent plan variations from `B02-planner` AND/OR multiple ideas/wishlists from the user.
+* **Output Modes**:
+  1. *Standalone*: Synthesis Report detailing Consensus, Clashes, and Unified Golden Strategy.
+  2. *Ensemble*: Machine-readable `<!-- CONTEXT_ANCHOR:SYNTHESIZED_PLAN -->` block for `B05-task-executor`.
+* **Workflow Connections**: Merges all divergent ideas into a single coherent plan before task decomposition. Feeds into `B05-task-executor`.
+
+---
+
+#### `B05-task-executor` — Atomic Task Decomposer & Execution Engine
+* **Status**: ✅ Approved & Operational
+* **Location**: `.agents/skills/B05-task-executor/`
+* **Aliases**: `task-executor`, `task-planner`, `decomposer`, `execution-engine`, `roadmap-architect`
+* **Role**: Strategic task decomposer and active execution tracker. Converts synthesized golden plans into phased, atomic roadmaps. Enforces the **Low Cognitive Load Protocol** (≤2 files touched per task, <50 lines changed per step) to eliminate AI hallucinations. Tracks dynamic task progress states (`[ ]` ➔ `[-]` ➔ `[x]`) and validates Definitions of Done before advancing phases.
+* **Has Scripts**: **Yes** (`scripts/task_executor.py` and `scripts/plan_linter.py` — zero external dependencies, <20ms execution).
+* **Self-Contained File Structure**:
+  ```
+  .agents/skills/B05-task-executor/
+  ├── SKILL.md                  # Decomposition protocol & cognitive load rules
+  ├── scripts/
+  │   ├── task_executor.py     # Execution engine, state tracker & progress calculator
+  │   └── plan_linter.py       # Static plan linter & cognitive load validator
+  └── agents/
+      └── openai.yaml           # Antigravity/OpenAI UI display metadata
+  ```
+* **Input**: `SYNTHESIZED_PLAN` from `B04-plan-synthesizer` + `SYSTEM_SPEC` from `B03-spec-architect`.
+* **Output Modes**:
+  1. *Standalone*: Structured Markdown Execution Roadmap with progressive task check-boxes and verifiable DoD gates.
+  2. *Ensemble*: Machine-readable `<!-- CONTEXT_ANCHOR:TASK_ROADMAP -->` block for `B06-failure-predictor` and Category C.
+* **Workflow Connections**: Positioned between plan synthesis and failure prediction. Hands off directly to `B06-failure-predictor`.
+
+---
+
+#### `B06-failure-predictor` — Pre-Flight Risk & Failure Predictor
+* **Status**: ✅ Approved & Operational
+* **Location**: `.agents/skills/B06-failure-predictor/`
+* **Aliases**: `failure-predictor`, `immune-gate`, `risk-assessor`, `predict-failures`
+* **Role**: Pre-flight immune system and risk gate. Proactively audits proposed code edits, plans, and file modifications against blast-radius impact (`A04-dependency-mapper`), database schema constraints (`A06-schema-scanner`), and architectural anti-patterns (unhandled network timeouts, unbounded queries, race conditions). Assigns a deterministic 5-level risk score and required verification gate.
+* **Has Scripts**: **Yes** (`scripts/scan_risks.py` — zero external dependencies, <30ms execution).
+* **Self-Contained File Structure**:
+  ```
+  .agents/skills/B06-failure-predictor/
+  ├── SKILL.md                  # Pre-flight audit protocol & risk gating rules
+  ├── scripts/
+  │   └── scan_risks.py         # Static risk pattern scanner & blast-radius calculator
+  └── agents/
+      └── openai.yaml           # Antigravity/OpenAI UI display metadata
+  ```
+* **Input**: Target file path, proposed code diff, or `TASK_ROADMAP` from `B05-task-executor`.
+* **Output Modes**:
+  1. *Standalone*: Pre-Flight Failure Prediction Report with Risk Score, identified anti-patterns, and required verification gate.
+  2. *Ensemble*: Machine-readable `<!-- CONTEXT_ANCHOR:FAILURE_PREDICTION -->` block for Category C (Implementation) and Category D (Test Engineer).
+* **Workflow Connections**: Positioned directly between `B05-task-executor` and Category C (Implementation). Serves as the pre-execution quality gate preventing regressions and runtime crashes.
 
 ---
 
