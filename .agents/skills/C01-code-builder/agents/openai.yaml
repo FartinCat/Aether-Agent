@@ -1,0 +1,4 @@
+interface:
+  display_name: "C01 Code Builder"
+  short_description: "Atomic implementation engine executing B05 roadmaps with strict <50 lines/edit and zero regressions."
+  default_prompt: "Implement this scheduled task with surgical precision, <=2 files touched, and DoD verification."
