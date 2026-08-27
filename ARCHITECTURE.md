@@ -302,7 +302,36 @@ Skills in this category turn high-level feature requests and Category A discover
 
 ---
 
-## 4. Self-Contained Skill Packaging Standard
+## 4. Category C: Build & Implementation Skills
+
+Skills in this category execute atomic code implementation, language-specific engineering, and surgical refactoring. They turn roadmaps from `B05-task-executor` and specifications from `B03-spec-architect` into robust, production-ready code with zero regressions.
+
+### Approved & Operational Skills
+
+#### `C01-code-builder` — Atomic Code Implementation Engine
+* **Status**: ✅ Approved & Operational
+* **Location**: `.agents/skills/C01-code-builder/`
+* **Aliases**: `code-builder`, `builder`, `implementer`, `atomic-coder`, `feature-builder`
+* **Role**: The core hands-on code implementation engine. Executes atomic tasks from `B05-task-executor` with strict adherence to the **Atomic Edit Protocol** (<=2 files touched, <50 lines per edit). Preserves existing comments, docstrings, and context. Enforces immediate Definition of Done verification commands before advancing roadmap states.
+* **Has Scripts**: **Yes** (`scripts/diff_guard.py` — zero external dependencies, <20ms execution).
+* **Self-Contained File Structure**:
+  ```
+  .agents/skills/C01-code-builder/
+  ├── SKILL.md                  # Atomic implementation protocol & surgical edit rules
+  ├── scripts/
+  │   └── diff_guard.py         # Static diff analyzer & cognitive load monitor
+  └── agents/
+      └── openai.yaml           # Antigravity/OpenAI UI display metadata
+  ```
+* **Input**: `TASK_ROADMAP` from `B05-task-executor`, `SYSTEM_SPEC` from `B03-spec-architect`, and `FAILURE_PREDICTION` from `B06-failure-predictor`.
+* **Output Modes**:
+  1. *Standalone*: Surgical code modifications with bracket balance sanity checks.
+  2. *Ensemble*: Machine-readable `<!-- CONTEXT_ANCHOR:CODE_IMPLEMENTATION -->` block for Category D (Test Engineer) and Category E (Antibug).
+* **Workflow Connections**: Positioned directly after `B06-failure-predictor`. Executes code modifications and hands off to Category D for test coverage and Category E for bug hunting.
+
+---
+
+## 5. Self-Contained Skill Packaging Standard
 
 Every skill in `.agents/skills/` must strictly adhere to the **Independence Law**:
 1. **No External Scripts**: A skill must never import or run scripts located outside its own folder (e.g. no calling `.agent/scripts/`).
