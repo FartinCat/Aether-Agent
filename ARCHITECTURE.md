@@ -331,6 +331,29 @@ Skills in this category execute atomic code implementation, language-specific en
 
 ---
 
+#### `C02-refactor-pro` — Surgical Behavior-Preserving Refactoring Engine
+* **Status**: ✅ Approved & Operational
+* **Location**: `.agents/skills/C02-refactor-pro/`
+* **Aliases**: `refactor-pro`, `refactorer`, `code-cleaner`, `dead-code-remover`, `modernizer`
+* **Role**: Surgical behavior-preserving refactoring engine. Eliminates technical debt, unreferenced imports, dead constants, and obsolete comments without breaking public exports, function signatures, or introducing regressions. Enforces the **Green-Before, Green-After** rule (all existing tests must pass before and after the refactoring).
+* **Has Scripts**: **Yes** (`scripts/dead_code_finder.py` — zero external dependencies, <30ms execution).
+* **Self-Contained File Structure**:
+  ```
+  .agents/skills/C02-refactor-pro/
+  ├── SKILL.md                  # Refactoring protocol & contract invariance rules
+  ├── scripts/
+  │   └── dead_code_finder.py   # Static unused import & dead code scanner
+  └── agents/
+      └── openai.yaml           # Antigravity/OpenAI UI display metadata
+  ```
+* **Input**: Target source file or module to refactor + existing test suite.
+* **Output Modes**:
+  1. *Standalone*: Cleaned code with reduced cognitive complexity and pruned dead imports.
+  2. *Ensemble*: Machine-readable `<!-- CONTEXT_ANCHOR:REFACTOR_REPORT -->` block detailing debt eliminated and verification status.
+* **Workflow Connections**: Runs in Category C during implementation or dedicated debt-cleanup phases. Coordinates with Category D (Test Engineer) to verify zero behavioral regressions.
+
+---
+
 ## 5. Self-Contained Skill Packaging Standard
 
 Every skill in `.agents/skills/` must strictly adhere to the **Independence Law**:
