@@ -1,0 +1,4 @@
+interface:
+  display_name: "C02 Refactor Pro"
+  short_description: "Surgical behavior-preserving refactoring engine eliminating dead code and complexity without breaking contracts."
+  default_prompt: "Safely refactor this code to eliminate debt and reduce complexity while preserving all public contracts."
