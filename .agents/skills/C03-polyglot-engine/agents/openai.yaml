@@ -1,0 +1,4 @@
+interface:
+  display_name: "C03 Polyglot Engine"
+  short_description: "Multi-language idiomatic code specialist enforcing conventions across TypeScript, Python, Rust, Go, and SQL."
+  default_prompt: "Audit or generate code using strict ecosystem-native idioms and zero hallucinated dependencies."
