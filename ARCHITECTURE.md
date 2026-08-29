@@ -354,6 +354,29 @@ Skills in this category execute atomic code implementation, language-specific en
 
 ---
 
+#### `C03-polyglot-engine` — Multi-Language Idiomatic Code Specialist
+* **Status**: ✅ Approved & Operational
+* **Location**: `.agents/skills/C03-polyglot-engine/`
+* **Aliases**: `polyglot-engine`, `language-specialist`, `idiomatic-code`, `code-standards`, `polyglot`
+* **Role**: Multi-language idiomatic code specialist and conventions auditor. Enforces ecosystem-native paradigms across TypeScript, Python, Go, Rust, and SQL (strict typing, error wrapping, ownership idioms, parameterized queries). Eliminates non-idiomatic translations and unapproved external dependencies.
+* **Has Scripts**: **Yes** (`scripts/idiom_checker.py` — zero external dependencies, <25ms execution).
+* **Self-Contained File Structure**:
+  ```
+  .agents/skills/C03-polyglot-engine/
+  ├── SKILL.md                  # Language conventions & idiomatic coding rules
+  ├── scripts/
+  │   └── idiom_checker.py      # Multi-language static idiom & convention auditor
+  └── agents/
+      └── openai.yaml           # Antigravity/OpenAI UI display metadata
+  ```
+* **Input**: Target source file or code snippet in TypeScript, Python, Go, Rust, or SQL.
+* **Output Modes**:
+  1. *Standalone*: Idiomatic quality score (0–100) and actionable anti-idiom warnings.
+  2. *Ensemble*: Machine-readable `<!-- CONTEXT_ANCHOR:IDIOMATIC_VERIFICATION -->` block for Category D and Category E.
+* **Workflow Connections**: Works within Category C alongside `C01-code-builder` and `C02-refactor-pro` to ensure generated or refactored code meets ecosystem-native standards before hand-off to testing.
+
+---
+
 ## 5. Self-Contained Skill Packaging Standard
 
 Every skill in `.agents/skills/` must strictly adhere to the **Independence Law**:
