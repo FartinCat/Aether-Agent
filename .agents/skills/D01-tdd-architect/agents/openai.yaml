@@ -1,0 +1,4 @@
+interface:
+  display_name: "D01 TDD Architect"
+  short_description: "Disciplined Red-Green-Refactor orchestrator enforcing failing tests before minimal code implementation."
+  default_prompt: "Orchestrate a strict Red-Green-Refactor TDD cycle for this feature, writing failing tests first."
