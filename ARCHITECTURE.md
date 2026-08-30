@@ -377,7 +377,36 @@ Skills in this category execute atomic code implementation, language-specific en
 
 ---
 
-## 5. Self-Contained Skill Packaging Standard
+## 5. Category D: Test & Quality Skills
+
+Skills in this category enforce test-driven development, edge-case generation, regression prevention, and test suite health. They guarantee that production code is backed by verifiable, automated tests.
+
+### Approved & Operational Skills
+
+#### `D01-tdd-architect` — Disciplined Red-Green-Refactor Orchestrator
+* **Status**: ✅ Approved & Operational
+* **Location**: `.agents/skills/D01-tdd-architect/`
+* **Aliases**: `tdd-architect`, `tdd-guard`, `test-driven-dev`, `test-engineer`, `red-green-refactor`
+* **Role**: Disciplined TDD orchestrator. Enforces the strict **Red-Green-Refactor Cycle**: authors focused, isolated unit tests first, confirms expected failure (Red), oversees minimal implementation until green (Green), and safeguards test suite stability during refactoring.
+* **Has Scripts**: **Yes** (`scripts/tdd_guard.py` — zero external dependencies, <25ms execution).
+* **Self-Contained File Structure**:
+  ```
+  .agents/skills/D01-tdd-architect/
+  ├── SKILL.md                  # TDD protocol & Red-Green-Refactor standards
+  ├── scripts/
+  │   └── tdd_guard.py          # Static assertion density & test health auditor
+  └── agents/
+      └── openai.yaml           # Antigravity/OpenAI UI display metadata
+  ```
+* **Input**: Requirements from `B03-spec-architect` + target feature/module.
+* **Output Modes**:
+  1. *Standalone*: Isolated unit/integration test files with healthy assertion density.
+  2. *Ensemble*: Machine-readable `<!-- CONTEXT_ANCHOR:TDD_CYCLE -->` block verifying Red, Green, and Refactor milestones.
+* **Workflow Connections**: Positioned at the entrypoint of Category D. Drives `C01-code-builder` and pairs with `C02-refactor-pro` to maintain green test suites.
+
+---
+
+## 6. Self-Contained Skill Packaging Standard
 
 Every skill in `.agents/skills/` must strictly adhere to the **Independence Law**:
 1. **No External Scripts**: A skill must never import or run scripts located outside its own folder (e.g. no calling `.agent/scripts/`).
