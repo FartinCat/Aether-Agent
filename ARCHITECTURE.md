@@ -406,6 +406,29 @@ Skills in this category enforce test-driven development, edge-case generation, r
 
 ---
 
+#### `D02-edge-case-tester` — Adversarial Boundary & Edge-Case Prober
+* **Status**: ✅ Approved & Operational
+* **Location**: `.agents/skills/D02-edge-case-tester/`
+* **Aliases**: `edge-case-tester`, `boundary-prober`, `fuzz-tester`, `unhappy-path-tester`, `stress-tester`
+* **Role**: Adversarial boundary prober. Systematically stress-tests modules, models, and routes against the **5-Axis Boundary Matrix**: null/empty states, numeric extremes (overflows, precision loss), string/buffer extremes (10KB payloads, emojis, injection probes), concurrency races, and network degradation (429, 504, corrupted JSON).
+* **Has Scripts**: **Yes** (`scripts/generate_edge_cases.py` — zero external dependencies, <25ms execution).
+* **Self-Contained File Structure**:
+  ```
+  .agents/skills/D02-edge-case-tester/
+  ├── SKILL.md                  # Boundary testing protocol & 5-axis fuzzing standard
+  ├── scripts/
+  │   └── generate_edge_cases.py # Static boundary matrix & payload generator
+  └── agents/
+      └── openai.yaml           # Antigravity/OpenAI UI display metadata
+  ```
+* **Input**: Target function signature, API route, or data model + risk limits from `B06-failure-predictor`.
+* **Output Modes**:
+  1. *Standalone*: Adversarial test cases and boundary-value test matrices.
+  2. *Ensemble*: Machine-readable `<!-- CONTEXT_ANCHOR:EDGE_CASE_MATRIX -->` block for Category E (Review & Security).
+* **Workflow Connections**: Follows `D01-tdd-architect` and `B06-failure-predictor`. Generates unhappy-path suites that prevent runtime crashes and unhandled exceptions.
+
+---
+
 ## 6. Self-Contained Skill Packaging Standard
 
 Every skill in `.agents/skills/` must strictly adhere to the **Independence Law**:
