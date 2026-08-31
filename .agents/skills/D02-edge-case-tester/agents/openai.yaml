@@ -1,0 +1,4 @@
+interface:
+  display_name: "D02 Edge Case Tester"
+  short_description: "Adversarial boundary prober generating unhappy-path tests across nulls, numeric extremes, and network drops."
+  default_prompt: "Generate an adversarial edge-case test matrix covering nulls, boundary values, concurrency, and network failures."
